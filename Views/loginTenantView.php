@@ -20,19 +20,19 @@ if(isset($_GET['wrongPassword'])) {
 
 
 
-<form action="login.php" method="post">
+<form action="loginTenant.php" method="post">
 
     <label for="email">Mettez votre Email</label>
-    <input type="email" name="email">
+    <input type="email" name="email" required>
 
     <br>
 
     <label for="password"> Mettez votre Password</label>
-    <input type="password" name="password">
+    <input type="password" name="password" required>
 
     <input type="submit" value="submit" name="submit">
 
 
 </form>
 
-<p> Pas encore de compte ? c'est <a href="registration.php">ici</a> !</p>
+<p> Pas encore de compte ? c'est <a href="registrationTenant.php">ici</a> !</p>

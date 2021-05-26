@@ -19,7 +19,7 @@ if(isset($_SESSION['connected'])) {
     <?php
 }
 ?>
-<h3>Ceci est la page d'accueil par défaut du site</h3>
+
 <!-- truc pour faire dl un fichier
 
 TODO : le link à la db pour le stocker 

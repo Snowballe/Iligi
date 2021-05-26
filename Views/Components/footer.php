@@ -1,4 +1,4 @@
 <hr style="margin:auto; width=75%;">
-<p style="margin:auto">Iligi</p> 
+<p>Footer de qualité</p> 
 </body>
 </html>
