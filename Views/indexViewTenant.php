@@ -3,7 +3,7 @@
 <?php 
 
 if(isset($_SESSION['connected'])) {
-    echo("Bonjour à toi ". $_SESSION['name'] ." !");
+    echo("Bonjour à toi ". $_SESSION['surname_tenant'] ." !");
     ?>
     <a href="logout.php">Déconnexion</a>
 
@@ -19,7 +19,7 @@ if(isset($_SESSION['connected'])) {
     <?php
 }
 ?>
-
+<h3>Ceci est la page des locataires</h3>
 <!-- truc pour faire dl un fichier
 
 TODO : le link à la db pour le stocker 

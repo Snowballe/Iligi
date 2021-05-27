@@ -34,4 +34,4 @@ if(isset($_GET['wrongPassword'])) {
 
 </form>
 
-<p> Si vous n'avez pas encore de compte bénéficiaire, contactez l'administrateur du site.</p>
+<p>Pas encore de compte propriétaire ? c'est <a href="registrationLandlord.php">ici</a> !</p>

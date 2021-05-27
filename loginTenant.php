@@ -1,7 +1,5 @@
 <?php 
-
 require 'Views/Components/header.php';
-
 require 'Models/LoginTenant.php';
 
 if(isset($_POST['submit'])){

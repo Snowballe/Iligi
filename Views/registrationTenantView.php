@@ -17,14 +17,6 @@
     <label for="email_tenant">Votre email *</label>
     <input type="email" name="email_tenant" placeholder="Votre mail" required>
     <br>
-    <label for="professional_situation_tenant">Votre situation professionelle : *</label>
-    <select name="professional_situation_tenant">
-    <option value="">Etudiant</option>
-    <option value="">Salarié</option>
-    <option value="">Employeur</option>
-    <option value="">Sans emploi</option>
-    </select>
-    <br>
     <label for="nb_roommates_tenant">Nombre de colocataires *</label>
     <br>
     <input type="text" name="nb_roommates_tenant" required>

@@ -1,10 +1,10 @@
 <?php
 require 'Views/Components/header.php';
 
-require 'Models/IndexTenant.php';
+require 'Models/IndexLandlord.php';
 
 $listUsers = getAllUsers();
  
-require 'Views/indexViewTenant.php';
+require 'Views/indexViewLandlord.php';
 require 'Views/Components/footer.php';
 ?>

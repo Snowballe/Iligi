@@ -22,17 +22,17 @@ if(isset($_GET['wrongPassword'])) {
 
 <form action="loginTenant.php" method="post">
 
-    <label for="email">Mettez votre Email</label>
-    <input type="email" name="email" required>
+    <label for="email_tenant">Mettez votre Email</label>
+    <input type="email" name="email_tenant" required>
 
     <br>
 
-    <label for="password"> Mettez votre Password</label>
-    <input type="password" name="password" required>
+    <label for="password_tenant"> Mettez votre Password</label>
+    <input type="password" name="password_tenant" required>
 
     <input type="submit" value="submit" name="submit">
 
 
 </form>
 
-<p> Pas encore de compte ? c'est <a href="registrationTenant.php">ici</a> !</p>
+<p> Pas encore de compte localtaire ? c'est <a href="registrationTenant.php">ici</a> !</p>

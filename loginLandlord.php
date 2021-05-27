@@ -1,6 +1,6 @@
 <?php 
 require "Views/Components/header.php";
-require "Models/LoginBeneficiaries.php";
+require "Models/LoginLandlord.php";
 
 if(isset($_POST['submit'])){
 
@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     }
 };
 
-require "Views/loginBeneficiariesView.php";
+require "Views/loginLandlordView.php";
 
 require "Views/Components/footer.php";
 
