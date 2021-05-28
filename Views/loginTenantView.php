@@ -35,4 +35,4 @@ if(isset($_GET['wrongPassword'])) {
 
 </form>
 
-<p> Pas encore de compte localtaire ? c'est <a href="registrationTenant.php">ici</a> !</p>
+<p> Pas encore de compte locataire ? c'est <a href="registrationTenant.php">ici</a> !</p>

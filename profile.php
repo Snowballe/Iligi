@@ -33,13 +33,7 @@ if(isset($_SESSION['connected'])) {
 
         };
 
-        if(isset($_POST['country_code'])) {
-
-            if(!$_POST['country_code'] == "") {
-                $changeCountryCode = changeCountryCode($_POST['country_code']);
-            };
-
-        };
+      
 
         if(isset($_POST['phone_number'])) {
 

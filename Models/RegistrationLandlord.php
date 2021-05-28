@@ -1,8 +1,8 @@
 <?php 
-function addLandlord($surname_landlord, $name_landlord, $email_landlord, $password_landlord, $tel_landlord){
+function addLandlord($surname_landlord, $name_landlord, $corporate_name_landlord, $email_landlord, $password_landlord, $tel_landlord){
     $db=dbConnect();
     
-    $users = $db->prepare('INSERT INTO landlord(surname_landlord, name_landlord, email_landlord, password_landlord, tel_landlord, created_at) VALUES (:surname_landlord, :name_landlord, :email_landlord, :password_landlord, :tel_landlord, :created_at)');
+    $users = $db->prepare('INSERT INTO landlord(surname_landlord, name_landlord, corporate_name_landlord, email_landlord, password_landlord, tel_landlord, created_at) VALUES (:surname_landlord, :name_landlord, :corporate_name_landlord, :email_landlord, :password_landlord, :tel_landlord, :created_at)');
 
     $passwordHash = password_hash($password_landlord, PASSWORD_DEFAULT);
 
@@ -11,6 +11,7 @@ function addLandlord($surname_landlord, $name_landlord, $email_landlord, $passwo
     $users->execute([
         'surname_landlord' => $surname_landlord,
         'name_landlord' => $name_landlord,
+        'corporate_name_landlord'=> $corporate_name_landlord,
         'email_landlord' => $email_landlord,
         'password_landlord' => $passwordHash,
         'tel_landlord'=>$tel_landlord,

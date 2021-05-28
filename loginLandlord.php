@@ -1,12 +1,12 @@
 <?php 
-require "Views/Components/header.php";
-require "Models/LoginLandlord.php";
+require 'Views/Components/header.php';
+require 'Models/LoginLandlord.php';
 
 if(isset($_POST['submit'])){
 
-    if(isset($_POST['email']) && isset($_POST['password'])){
+    if(isset($_POST['email_landlord']) && isset($_POST['password_landlord'])){
 
-        $connectBeneficiaries = checkBeneficiaries($_POST['email'], $_POST['password']);
+        $connectLandlord = checklandlord($_POST['email_landlord'], $_POST['password_landlord']);
     }
 };
 

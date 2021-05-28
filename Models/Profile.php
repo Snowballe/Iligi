@@ -1,5 +1,23 @@
 <?php
+/* 
+=======================================================
 
+
+
+
+
+
+TODO : faire différents modifications de profil
+
+
+
+
+
+
+
+
+=======================================================
+*/
 function changePassword($password, $passwordConfirm) {
 
     $db = dbConnect();
@@ -63,22 +81,6 @@ function changeSurname($surname) {
 
 };
 
-function changeCountryCode($country_code) {
-
-    $db = dbConnect();
-    date_default_timezone_set('Europe/Paris');
-    
-    $changeCountryCode = $db->prepare('UPDATE users SET country_code = :country_code, updated_at = :updated_at WHERE id = :id');
-
-    $changeCountryCode->execute([
-        'country_code' => $country_code,
-        'updated_at' => date('Y-m-d H:i:s'),
-        'id' => $_SESSION['id'],
-    ]) or die(print_r($changeCountryCode->errorInfo()));
-
-    header('Location: index.php');
-
-};
 
 function changePhoneNumber($phone_number) {
 

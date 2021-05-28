@@ -19,15 +19,15 @@ if(isset($_GET['wrongPassword'])) {
 
 
 
-<form action="loginBeneficiaries.php" method="post">
+<form action="loginLandlord.php" method="post">
 
-    <label for="email_beneficiaries">Mettez votre Email</label>
-    <input type="email" name="email">
+    <label for="email_landlord">Mettez votre Email</label>
+    <input type="email" name="email_landlord">
 
     <br>
 
-    <label for="password_beneficiaries"> Mettez votre Password</label>
-    <input type="password" name="password">
+    <label for="password_landlord"> Mettez votre Password</label>
+    <input type="password" name="password_landlord">
 
     <input type="submit" value="submit" name="submit">
 

@@ -3,12 +3,16 @@
 <form action="registrationLandlord.php" method="post">
 
 
-    <label for="surname_landlord">Votre prénom  *</label>
+    <label for="surname_landlord">Votre prénom *</label>
     <input type="text" name="surname_landlord" placeholder="Votre prénom" minlength="4" mxlength="20" size="22" required/>
     <br>
     <label for="name_landlord">Entrez votre nom *</label>
-    <input type="text" name="name_landlord" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22" required>
+    <input type="text" name="name_landlord" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22" required />
     <br>
+    <label for="corporate_name_landlord">Si vous êtes une société, entrez son nom :</label>
+    <input type="text" name="corporate_name_landlord" placeholder="Nom de société" minlength="1">
+    <br>
+
     <label for="tel_landlord">N° de téléphone : *</label>
     <input type="tel" name="tel_landlord" placeholder="N°" pattern="[0-9]{10}" required>
     <br>

@@ -1,16 +1,25 @@
 
 
 <?php 
-
-if(isset($_SESSION['connected'])) {
-    echo("Bonjour à toi ". $_SESSION['surname_landlord'] ." !");
+if(isset($_SESSION['connected'])){//On check si trucmuch est connecté
+    
+    if($_SESSION['corporate_name_landlord']!=NULL){//Check si le nom de société est vide
+        echo("Bonjour à vous ". $_SESSION['corporate_name_landlord'] ." !");
+        ?>
+        <a href="logout.php">Déconnexion</a>
+        <a href="profile.php">Modifier votre profil</a>
+        <?php
+    } else { //Sinon on dit bonjour au prénom
+        echo("Bonjour à toi ". $_SESSION['surname_landlord'] ." !");
     ?>
     <a href="logout.php">Déconnexion</a>
 
     <a href="profile.php">Modifier votre profil</a>
 
     <?php
-} else {
+    }
+
+}else {
     ?>
     <a href="loginTenant.php">Connection locataires</a>
     <br>
@@ -23,25 +32,14 @@ if(isset($_SESSION['connected'])) {
 <!-- truc pour faire dl un fichier
 
 TODO : le link à la db pour le stocker 
-
 -->
-<form action="/action_page.php">
-  <input type="file" id="myFile" name="filename">
-  <input type="submit">
+<br>
+<form action="indexLandlord.php" method="post" enctype="multipart/form-data">
+ <label for="files_landlord">Ajouter une pièce d'identité :</label>
+  <input type="file"  name="files_landlord"> <!-- input case du fichier à charger -->
+  <input type="submit" name="submit"> <!-- Bouton ok -->
 </form>
-
-
-<?php
-foreach($listUsers->fetchAll() as $listUser) {
-?> 
-
-    <p>prénom : <?php echo $listUser['surname_landlord']; ?></p>
-    
-    <p>Nom : <?php echo $listUser['name_landlord'];?></p>
-    <br><br>
-
-<?php } ?>
-
+<br>
 
 
 
