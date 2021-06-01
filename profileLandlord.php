@@ -3,7 +3,7 @@
 require 'Views/Components/header.php';
     
 if(isset($_SESSION['connected'])) {
-    require 'Models/Profile.php';
+    require 'Models/ProfileLandlord.php';
 
     if(isset($_POST['submit-password'])) {
 
@@ -50,11 +50,12 @@ if(isset($_SESSION['connected'])) {
             };
 
         };
-
+        
+        
     };
 
 
-    require 'Views/profileView.php';
+    require 'Views/profileViewLandlord.php';
 
     require 'Views/Components/footer.php';
 

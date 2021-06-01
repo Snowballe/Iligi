@@ -7,7 +7,7 @@ if(isset($_SESSION['connected'])) {
     ?>
     <a href="logout.php">Déconnexion</a>
 
-    <a href="profile.php">Modifier votre profil</a>
+    <a href="profileTenant.php">Modifier votre profil</a>
 
     <?php
 } else {
@@ -20,27 +20,14 @@ if(isset($_SESSION['connected'])) {
 }
 ?>
 <h3>Ceci est la page des locataires</h3>
-<!-- truc pour faire dl un fichier
-
-TODO : le link à la db pour le stocker 
-
--->
-<form action="/action_page.php">
-  <input type="file" id="myFile" name="filename">
-  <input type="submit">
+<br>
+<form action="indexTenant.php" method="post" enctype="multipart/form-data">
+ <label for="files_tenant">Ajouter une pièce d'identité :</label>
+  <input type="file"  name="file_tenant"> <!-- input case du fichier à charger -->
+  <input type="submit" name="submit_file"> <!-- Bouton ok -->
 </form>
+<br>
 
-
-<?php
-foreach($listUsers->fetchAll() as $listUser) {
-?> 
-
-    <p>prénom : <?php echo $listUser['surname_tenant']; ?></p>
-    
-    <p>Nom : <?php echo $listUser['name_tenant'];?></p>
-    <br><br>
-
-<?php } ?>
 
 
 

@@ -10,7 +10,7 @@ if(isset($_GET['wrongPassword'])) {
 
 ?>
 
-<form action="profile.php" method="post">
+<form action="profileLandlord.php" method="post">
 
     <label for="password">Changez de mot de passe</label>
     <input type="password" name="password" placeholder="****" required>
@@ -29,7 +29,7 @@ if(isset($_GET['wrongPassword'])) {
 
 
 
-<form action="profile.php" method="post">
+<form action="profileLandlord.php" method="post">
 
     <label for="name">Changez votre nom</label>
     <input type="text" name="name" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22">
@@ -53,3 +53,4 @@ if(isset($_GET['wrongPassword'])) {
 
     <input type="submit" value="submit" name="submit">
 </form>
+

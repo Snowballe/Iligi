@@ -1,5 +1,7 @@
 AuthName "Droits d'administration requis"
-AuthUserFile C:\wamp64\www\SoranaAsso\Admin\.htpasswd
+AuthUserFile C:\wamp64\www\iligi\Admin\.htpasswd
 AuthType Basic
 require valid-user
 RewriteEngine On
+
+
