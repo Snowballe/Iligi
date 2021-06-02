@@ -1,12 +1,15 @@
 <?php
-function finTenantAlike(){
+
     
-    $db=dbConnect() 
+  $db=dbConnect();
 
-    $stmt = $db->prepare('SELECT * FROM tenant WHERE tenant_name LIKE %:term%');
+  $searchTenantNames=$db->query("SELECT * FROM tenant WHERE name_tenant")or die(print_r($searchTenantNames->errorInfo()));
+ 
+  $yes=$searchTenantNames->fetch(\PDO::FETCH_ASSOC);
+  echo $yes[4];
+  return $yes;
 
-    $stmt->execute(['term' => $searchTerm]);
-    $results = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
-    json_encode($results);
-}
+
+
+
 ?>

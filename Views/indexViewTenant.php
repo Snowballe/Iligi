@@ -27,6 +27,12 @@ if(isset($_SESSION['connected'])) {
   <input type="submit" name="submit_file"> <!-- Bouton ok -->
 </form>
 <br>
+<form action="indexTenant.php" method="post" enctype="multipart/form-data">
+ <label for="files_tenant">Ajouter votre état des lieux :</label>
+  <input type="file"  name="file_tenant"> <!-- input case du fichier à charger -->
+  <input type="submit" name="submit_file"> <!-- Bouton ok -->
+</form>
+<br>
 
 
 

@@ -14,14 +14,32 @@ require 'Functions/database.fn.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Script pour l'autocomplétion (JQuery) -->
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="autocomplete/frontend-script.js"></script>
+    
     <title>Iligi - Admin</title>
-</head>
-<body>
+    
+    
+   </head>
+   
+   <body>
+   <script>
+         $(function() {
+            var availableTutorials = [
+               "ActionScript",
+               "Bootstrap",
+               "C",
+               "C++",
+            ];
+            $( "#automplete-2" ).autocomplete({
+               source: availableTutorials,
+               autoFocus:true
+            });
+         });
+      </script>
+      
+
 

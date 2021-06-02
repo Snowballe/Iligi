@@ -2,6 +2,7 @@
 require 'Views/Components/header.php';
 
 require 'Models/IndexTenant.php';
+
 if (htmlspecialchars(isset($_POST['submit_file']))) {
     $fileExistsFlag = 0; 
     $fileNameAndPath = "Assets/files/tenant/".$_FILES['file_tenant']['name'];
