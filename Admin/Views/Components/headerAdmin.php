@@ -26,20 +26,7 @@ require 'Functions/database.fn.php';
    </head>
    
    <body>
-   <script>
-         $(function() {
-            var availableTutorials = [
-               "ActionScript",
-               "Bootstrap",
-               "C",
-               "C++",
-            ];
-            $( "#automplete-2" ).autocomplete({
-               source: availableTutorials,
-               autoFocus:true
-            });
-         });
-      </script>
+   
       
 
 

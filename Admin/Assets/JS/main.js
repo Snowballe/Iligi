@@ -1,16 +1,29 @@
-$(document).ready(function() {
-   var availableTutorials = [
-      "ActionScript",
-      "Bootstrap",
-      "C",
-      "C++",
-   ];
-   $('#autocompete-2').keyup(function(){
-       var SearchTenant=$('#autocompete-2').val();
-       console.log(SearchTenant);
-   })
-   $( "#automplete-2" ).autocomplete({
-      source: availableTutorials,
-      autoFocus:true
-   });
+$(function() {
+    $.ajax({
+        url:'Models/Admin.php',
+        data:{Admin:arrayTenant},
+        success:function(yes){
+            $( "#automplete_tenant" ).autocomplete({
+                source: arrayTenant,
+                autoFocus:true
+             });
+        }
+    });
+
+   
 });
+
+
+
+
+//$('#autocompete-2').val();
+//    if(SearchTenant!=""){
+//        $.ajax({
+//            url:'Models/Admin.php',
+//            method='POST',
+//            data:{Admin:SearchTenant},
+//            success:function(data){
+//                console.log(data)
+//            }
+//        }) 
+//    }

@@ -18,6 +18,6 @@ function addTenant($surname_tenant, $name_tenant, $email_tenant, $password_tenan
         'created_at' => date('Y-m-d H:i:s'),
     ]) or die(print_r($users->errorInfo()));
     $_SESSION['connected'] = true;
-    $_SESSION['surname_tenant'] = $surname_tenant
+    $_SESSION['surname_tenant'] = $surname_tenant;
     return $users;
 }
