@@ -1,6 +1,8 @@
 
-
-<?php 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <?php 
 if(isset($_SESSION['connected'])){//On check si la personne est connecté
     
     if($_SESSION['corporate_name_landlord']!=NULL){//Check si le nom de société est vide
@@ -8,9 +10,9 @@ if(isset($_SESSION['connected'])){//On check si la personne est connecté
         ?>
 
 
-        <a href="profileLandlord.php">Modifier votre profil</a>
-        <a href="logout.php">Déconnexion</a>
-        <a href="profile.php">Modifier votre profil</a>
+        <a class="text-decoration-none" href="profileLandlord.php">Modifier votre profil</a>
+        <a class="text-decoration-none" href="logout.php">Déconnexion</a>
+        <a class="text-decoration-none" href="profile.php">Modifier votre profil</a>
         
         
         <?php
@@ -19,22 +21,26 @@ if(isset($_SESSION['connected'])){//On check si la personne est connecté
     ?>
     
     
-    <a href="logout.php">Déconnexion</a>
+    <a class="text-decoration-none" href="logout.php">Déconnexion</a>
 
     
 
     <?php
-    }
+   
 
-}else {
+}}else {
     ?>
     
-    <a href="loginTenant.php">Connection locataires</a>
-    <a href="loginLandlord.php">Connection propriétaires</a>
-    
-    <?php
-}
-?>
+    <a class="text-decoration-none" href="loginTenant.php">Connection locataires</a>
+    <a class="text-decoration-none" href="loginLandlord.php">Connection propriétaires</a>
+
+<?php } ?>
+        
+        </div>
+    </div>
+</div>
+
+
 
 <div class="container">
     <div class="row">
@@ -79,12 +85,9 @@ if(isset($_SESSION['connected'])){//On check si la personne est connecté
                     <div class="card-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, excepturi, reiciendis voluptatem id doloribus tenetur corrupti nulla molestiae voluptates et labore ea. Veritatis alias, aliquam dolore quia quae dolorem cupiditate?</p></div>
                 </div>
             </div>
-        </div>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="Assets/img/videos/raspvidtest.mp4" allowfullscreen></iframe>
-    </div>
-    
-    </div>
+        </div>   
+        
+</div>
 </div>
 <br>
 
