@@ -1,4 +1,4 @@
-<script src="Assets/JS/main.js"></script>
+<p>footer</p>
 </body>
 
 </html>

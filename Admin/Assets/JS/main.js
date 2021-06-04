@@ -1,17 +1,8 @@
-$(function() {
-    $.ajax({
-        url:'Models/Admin.php',
-        data:{Admin:arrayTenant},
-        success:function(yes){
-            $( "#automplete_tenant" ).autocomplete({
-                source: arrayTenant,
-                autoFocus:true
-             });
-        }
+$( function() {
+    $( "#automplete_tenant" ).autocomplete({
+      source: "Models/Admin.php"
     });
-
-   
-});
+  } );
 
 
 

@@ -2,6 +2,8 @@ AuthName "Droits d'administration requis"
 AuthUserFile C:\wamp64\www\iligi\Admin\.htpasswd
 AuthType Basic
 require valid-user
-RewriteEngine On
-
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
 

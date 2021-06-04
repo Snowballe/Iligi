@@ -11,22 +11,63 @@
 
   //   $encodedTenantNames=json_encode($fetchedTenants);
  
-   
+   function deleteLease($leaseToDelete){
+      $db=dbConnect();
+      $delQuery=$db->prepare("DELETE * FROM common where id=:id");
+      $delQuery->execute([
+        'id'=>$leaseToDelete,
+      ]);
+      return $delQuery
+   };
 function displayTenants($tenantToSearch){
   
   $db=dbConnect();
   
-  $searchTenantNames=$db->prepare("SELECT * FROM tenant WHERE name_tenant LIKE '%box_search_tenant%'=:box_search_tenant");
+  $searchTenantNames=$db->prepare("SELECT * FROM tenant WHERE name_tenant=:name_tenant");
   
   $searchTenantNames->execute([
-    'box_search_tenant'=>$tenantToSearch,
+    'name_tenant'=>$tenantToSearch,
   ])or die(print_r($searchTenantNames->errorInfo()));
+  
+  $foundTenantNames=$searchTenantNames->fetchAll();
+  
 
-  $foundTenantNames=$searchTenantNames->fetch();
-
-return $foundTenantNames;
+?><script>$( function() {
+  $( "#automplete_tenant" ).autocomplete({
+    source: <?php echo json_encode($foundTenantNames); ?>
+  });
+} );
+</script><?php
 };
 
+function uploadFileCommon($file_dir_common){
+    
+  $db=dbConnect();
+  
 
+  $upload=$db->prepare('INSERT INTO common (file_dir_common, created_at) VALUES (:file_dir_common, :created_at)');
+  
+  date_default_timezone_set('Europe/Paris');
+  
+  $upload->execute([
+      'file_dir_common'=>$file_dir_common,
+      'created_at' => date('Y-m-d H:i:s'),
+  ]) or die(print_r($upload->errorInfo()));
+
+  return $upload;
+};
+
+function checkFileNameCommon($pictureName) {
+
+  $db = dbConnect();
+
+  $checkExistingPicturesName = $db->prepare('SELECT file_dir_common FROM common WHERE file_dir_common=:file_dir_common');
+
+  $checkExistingPicturesName->execute([
+      'file_dir_common' => $pictureName,
+  ]) or die(print_r($checkExistingPicturesName->errorInfo()));
+
+  return $checkExistingPicturesName;
+};
 
 ?>
