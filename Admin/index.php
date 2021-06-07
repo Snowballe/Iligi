@@ -4,20 +4,21 @@
 
     require 'Models/Admin.php';
 
+    $listTenants=getTenants();
+
   if(isset($_POST['search'])){
     displayTenants($_POST['box_search_tenant']);
-  
-}
+  };
 
 if(isset($_POST['delete_lease'])){
-    deleteLease($_POST['lease_select'];
+    deleteLease($_POST['lease_select']);
 }
     
     
    if (htmlspecialchars(isset($_POST['submit_file_common']))) {
     $fileExistsFlag = 0; 
-    $fileNameAndPath = "../Assets/files/common/".$_FILES['file_common']['name'];
-    $fileName = $_FILES['file_common']['name'];
+    $fileNameAndPath = "../Assets/files/common/".$_FILES(['file_common']['name']);
+    $fileName = $_FILES(['file_common']['name']);
     /* 
     *    Checking whether the file already exists in the destination folder 
     */
@@ -63,6 +64,6 @@ if(isset($_POST['delete_lease'])){
 }
     require 'Views/indexViewAdmin.php';
 
-    require 'Views/Components/footerAdmin.php'
+    require 'Views/Components/footerAdmin.php';
 
 ?>

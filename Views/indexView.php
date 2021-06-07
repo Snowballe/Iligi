@@ -86,19 +86,6 @@
 
     <div class="col-12 col-lg-4">
         <div class="card">
-            <img src="Assets/img/1209_view.jpg" alt="truc moche" class="card-img-top">
-            <div class="card-body">
-                <div class="card-title">
-                    <h5>Vous allez être trobo</h5>
-                </div>
-                <div class="card-text">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A deserunt id accusamus corrupti vitae? Pariatur illum quod exercitationem nulla perferendis id, tempore, aperiam libero accusamus recusandae sit molestiae aliquid debitis!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-lg-4">
-        <div class="card">
             <img src="Assets/img/maison-de-ville-avec-piscine-a-bordeaux.jpg" alt="truc moche" class="card-img-top">
             <div class="card-body">
                 <div class="card-title">
