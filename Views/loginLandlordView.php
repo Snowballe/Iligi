@@ -1,17 +1,18 @@
 <?php
 
-if(isset($_GET['wrongEmail'])) {
+if (isset($_GET['wrongEmail'])) {
 
-    ?>
-    <p style="color: red;">Mauvais email de bénéficiaire, veuillez réessayer.</p>
-    <?php
+?>
+<div class="container">
+    <p style="color: red;">Mauvais email, veuillez réessayer.</p>
+<?php
 };
 
-if(isset($_GET['wrongPassword'])) {
+if (isset($_GET['wrongPassword'])) {
 
-    ?>
+?>
     <p style="color: red;">Mauvais mot de passe, veuillez réessayer</p>
-    <?php
+<?php
 
 }
 
@@ -19,19 +20,32 @@ if(isset($_GET['wrongPassword'])) {
 
 
 
-<form action="loginLandlord.php" method="post">
+    <form action="loginLandlord.php" method="post">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-auto">
 
-    <label for="email_landlord">Mettez votre Email</label>
-    <input type="email" name="email_landlord">
+                <label for="email_landlord" class="form-label">Mettez votre Email</label>
+                <input type="email" name="email_landlord" class="form-control" placeholder="nom@exemple.fr">
 
-    <br>
+            </div>
+        </div>
+        <div class="mb-3 row justify-content-center">
+            <div class="col-auto">
+                <label for="password_landlord" class="form-label"> Mettez votre Password</label>
 
-    <label for="password_landlord"> Mettez votre Password</label>
-    <input type="password" name="password_landlord">
+                <input type="password" class="form-control" name="password_landlord">
+            </div>
+        </div>
+        <div class="mb-3 row justify-content-center">
 
-    <input type="submit" value="submit" name="submit">
+            <div class="col-auto">
+                <button class="btn btn-primary mb-3" type="submit" name="submit">Confirmer</button>
+            </div>
+        </div>
+    </form>
 
 
-</form>
-
-<p>Pas encore de compte propriétaire ? c'est <a href="registrationLandlord.php">ici</a> !</p>
+    <div class="mb-3 row justify-content-center">
+        <p>Pas encore de compte propriétaire ? c'est <a href="registrationLandlord.php">ici</a> !</p>
+    </div>
+</div>
