@@ -16,7 +16,7 @@ require 'Functions/database.fn.php';
     <link rel="icon" type="image/x-icon" href="https://static-cdn.website-editor.net/runtime/favicon_d1_res.ico">
     <link rel="stylesheet" href="Assets/CSS/bootstrap/css/bootstrap.css">
 </head>
-<body>
+<body >
 <div class="bg-light">
     <div class="container">
       <div class="row">

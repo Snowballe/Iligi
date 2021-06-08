@@ -35,15 +35,16 @@
 <div class="container">
     <div class="row">
         <div class="col">
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-    <!--<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-        <use xlink:href="#info-fill" />
-    </svg>-->
-    <h5 class="alert-heading">Prérequis :</h5>
-    <p>Bases en CSS. Si vous ne les maîtrisez pas, suivez ce cours : <a class="alert-link" href="#">Apprenez à créer votre site web avec HTML5 et CSS3</a></p>
-    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
 
-</div>
+                <h5 class="alert-heading">Prérequis :</h5>
+                <p>Bases en CSS. Si vous ne les maîtrisez pas, suivez ce cours : <a class="alert-link" href="#">Apprenez à créer votre site web avec HTML5 et CSS3</a></p>
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+
+            </div>
+            <!-- TODO : Carousel donné dans la doc ne marche pas, celui-ci marche mais n'est pas très bô -->
+
+
             <div id="carouselControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -63,41 +64,41 @@
                 </a>
             </div>
         </div>
+
+        <p class="fst-italic align-text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex magnam ea asperiores ipsum totam, aliquam atque facilis, libero</p>
     </div>
-</div>
-<p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex magnam ea asperiores ipsum totam, aliquam atque facilis, libero</p>
-<div class="row">
-    <div class="col-12 col-lg-4">
-        <div class="card">
-            <img src="Assets/img/2b8b4313995737e29f938e99cc5eb9ff.jpg" alt="Mec meilleur" class="card-img-top">
-            <div class="card-body">
-                <div class="card-title">
-                    <h5>Devenez meilleur</h5>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="card">
+                <img src="Assets/img/2b8b4313995737e29f938e99cc5eb9ff.jpg" alt="Mec meilleur" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5>Devenez meilleur</h5>
+                    </div>
+                    <div class="card-texte">
+                        <p class="text-xl-right">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque quia perferendis omnis hic maxime quisquam ullam consectetur tempora voluptate minus? Obcaecati qui ipsum tempore numquam possimus hic velit repudiandae vitae.
+                        </p>
+                        <a class="btn btn-primary stretched-link" href="#" role="button">Owi</a>
+                    </div>
                 </div>
-                <div class="card-texte">
-                    <p class="text-xl-right">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque quia perferendis omnis hic maxime quisquam ullam consectetur tempora voluptate minus? Obcaecati qui ipsum tempore numquam possimus hic velit repudiandae vitae.
-                    </p>
-                    <a class="btn btn-primary stretched-link" href="#" role="button">Owi</a>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="card">
+                <img src="Assets/img/maison-de-ville-avec-piscine-a-bordeaux.jpg" alt="truc moche" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5>Mais genre vraiment</h5>
+                    </div>
+                    <div class="card-text">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, excepturi, reiciendis voluptatem id doloribus tenetur corrupti nulla molestiae voluptates et labore ea. Veritatis alias, aliquam dolore quia quae dolorem cupiditate?</p>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-
-    <div class="col-12 col-lg-4">
-        <div class="card">
-            <img src="Assets/img/maison-de-ville-avec-piscine-a-bordeaux.jpg" alt="truc moche" class="card-img-top">
-            <div class="card-body">
-                <div class="card-title">
-                    <h5>Mais genre vraiment</h5>
-                </div>
-                <div class="card-text">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, excepturi, reiciendis voluptatem id doloribus tenetur corrupti nulla molestiae voluptates et labore ea. Veritatis alias, aliquam dolore quia quae dolorem cupiditate?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
 </div>
 <br>

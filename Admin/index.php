@@ -5,15 +5,14 @@
     require 'Models/Admin.php';
 
     $listTenants=getTenants();
-
-  if(isset($_POST['search'])){
-    displayTenants($_POST['box_search_tenant']);
-  };
+    $listLandlords=getLandLords();
 
 if(isset($_POST['delete_lease'])){
     deleteLease($_POST['lease_select']);
 }
-    
+    if(isset($_POST['chose_landlord'])){
+        
+    }
     
    if (htmlspecialchars(isset($_POST['submit_file_common']))) {
     $fileExistsFlag = 0; 
@@ -65,5 +64,3 @@ if(isset($_POST['delete_lease'])){
     require 'Views/indexViewAdmin.php';
 
     require 'Views/Components/footerAdmin.php';
-
-?>

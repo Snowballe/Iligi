@@ -13,24 +13,21 @@ require 'Functions/database.fn.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Assets/CSS/bootstrap/css/bootstrap.css">
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Script pour l'autocomplétion (JQuery) -->
-  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="Assets/CSS/style.css">
-  <script src="Assets/JS/main.js"></script>
+  <link rel="icon" type="image/x-icon" href="../favicon_d1_res.ico">
+
   <title>Iligi - Admin</title>
 
 
 </head>
 
 <body>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col">
-      <h3>Panneau Administrateur Iligi</h3>
-      </div>
-    </div>
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Iligi - Panneau Administrateur</a>
+    <form class="d-flex">
+      <a class="btn btn-info" href="../index.php">Retourner à l'accueil</a>
+    </form>
   </div>
+</nav>
