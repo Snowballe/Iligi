@@ -26,8 +26,10 @@ require 'Functions/database.fn.php';
   <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand">Iligi - Panneau Administrateur</a>
-    <form class="d-flex">
+    <form class="d-flex d-end">
+    <a href="index.php" class="btn btn-light mx-3 text-dark">Home</a>
       <a class="btn btn-info" href="../index.php">Retourner à l'accueil</a>
+      
     </form>
   </div>
 </nav>
