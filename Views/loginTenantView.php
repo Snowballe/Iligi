@@ -1,38 +1,54 @@
-
 <?php
 
-if(isset($_GET['wrongEmail'])) {
+if (isset($_GET['wrongEmail'])) {
 
-    ?>
+?>
     <p style="color: red;">Mauvais email, veuillez réessayer</p>
-    <?php
+<?php
 };
 
-if(isset($_GET['wrongPassword'])) {
+if (isset($_GET['wrongPassword'])) {
 
-    ?>
+?>
     <p style="color: red;">Mauvais mot de passe, veuillez réessayer</p>
-    <?php
+<?php
 
 }
 
 ?>
 
 
+<div class="container">
+    <form action="loginTenant.php" method="post">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-auto">
 
-<form action="loginTenant.php" method="post">
+                <label for="email_tenant" class="form-label">Mettez votre Email</label>
+                <input type="email" name="email_tenant" class="form-control" placeholder="nom@exemple.fr">
 
-    <label for="email_tenant">Mettez votre Email</label>
-    <input type="email" name="email_tenant" required>
+            </div>
+        </div>
+        <div class="mb-3 row justify-content-center">
+            <div class="col-auto">
+                <label for="password_tenant" class="form-label"> Mettez votre Password</label>
 
-    <br>
+                <input type="password" class="form-control" name="password_tenant" placeholder="****">
+            </div>
+        </div>
+        <div class="mb-3 row justify-content-center">
 
-    <label for="password_tenant"> Mettez votre Password</label>
-    <input type="password" name="password_tenant" required>
+            <div class="col-auto">
+                <button class="btn btn-primary mb-3" type="submit" name="submit">Confirmer</button>
+            </div>
+        </div>
+    </form>
+    <div id="carouselControls" class="carousel slide carousel-fade" data-ride="carousel">
+    
 
-    <input type="submit" value="submit" name="submit">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <p>Pas encore de compte locataire ? c'est <a class="text-dark" href="registrationTenant.php">ici</a> !</p>
 
-
-</form>
-
-<p> Pas encore de compte locataire ? c'est <a href="registrationTenant.php">ici</a> !</p>
+        </div>
+    </div>
+</div>

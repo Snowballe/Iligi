@@ -38,13 +38,13 @@ function deleteLease($leaseToDelete)
 };
 
 
-function uploadFileCommon($file_dir_common)
+function uploadFileCommon($file_dir_common, $idTenant, $idLandlord)
 {
 
   $db = dbConnect();
 
 
-  $upload = $db->prepare('INSERT INTO common (file_dir_common, created_at) VALUES (:file_dir_common, :created_at)');
+  $upload = $db->prepare('INSERT INTO common (file_dir_common, id_landlord_concerned, id_tenant_concerned, created_at) VALUES (:file_dir_common, :id_landlord_concerned, :id_tenant_concerned, :created_at)');
 
   date_default_timezone_set('Europe/Paris');
 

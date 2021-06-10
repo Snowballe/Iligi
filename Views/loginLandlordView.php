@@ -3,20 +3,20 @@
 if (isset($_GET['wrongEmail'])) {
 
 ?>
-<div class="container">
-    <p style="color: red;">Mauvais email, veuillez réessayer.</p>
-<?php
+    <div class="container">
+        <p style="color: red;">Mauvais email, veuillez réessayer.</p>
+    <?php
 };
 
 if (isset($_GET['wrongPassword'])) {
 
-?>
-    <p style="color: red;">Mauvais mot de passe, veuillez réessayer</p>
-<?php
+    ?>
+        <p style="color: red;">Mauvais mot de passe, veuillez réessayer</p>
+    <?php
 
 }
 
-?>
+    ?>
 
 
 
@@ -33,7 +33,7 @@ if (isset($_GET['wrongPassword'])) {
             <div class="col-auto">
                 <label for="password_landlord" class="form-label"> Mettez votre Password</label>
 
-                <input type="password" class="form-control" name="password_landlord">
+                <input type="password" class="form-control" name="password_landlord" placeholder="****">
             </div>
         </div>
         <div class="mb-3 row justify-content-center">
@@ -45,7 +45,10 @@ if (isset($_GET['wrongPassword'])) {
     </form>
 
 
-    <div class="mb-3 row justify-content-center">
-        <p>Pas encore de compte propriétaire ? c'est <a href="registrationLandlord.php">ici</a> !</p>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <p>Pas encore de compte propriétaire ? c'est <a href="registrationLandlord.php">ici</a> !</p>
+
+        </div>
     </div>
-</div>
+    </div>

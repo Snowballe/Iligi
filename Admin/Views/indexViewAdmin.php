@@ -7,12 +7,14 @@
       <input name="box_search_tenant" class="form-control" id="searchInput" type="text" placeholder="Rechercher...">
     </div>
     <div class="col-auto">
+    <form action="index.php" method="post">
       <input id="tenant_chosen" name="tenant_chosen" class="form-control mt-3" type="text" placeholder="Aucun locataire choisi" readonly>
       <button onclick="document.getElementById('tenant_chosen').value = ''" class="form-control">Désélectionner</button>
     </div>
     <div class="col-auto">
       <input id="landlord_chosen" name="landlord_chosen" class="form-control mt-3" type="text" placeholder="Aucun propriétaire choisi" readonly>
       <button onclick="document.getElementById('landlord_chosen').value = ''" class="form-control">Désélectionner</button>
+      </form>
     </div>
 
 
@@ -73,7 +75,7 @@
         
         <input style="font-size:large;" class="form-control bg-secondary text-light text-center" type="text" value="Ajouter le bail rempli" aria-label="Ajouter le bail rempli" readonly>
         <input class="form-control" type="file" name="file_common"> <!-- input case du fichier à charger -->
-        <input onclick="document.querySelectorAll('tenant_chosen, landlord_chosen')"class="btn btn-secondary w-100" type="submit" name="submit_file_common"> <!-- Bouton ok -->
+        <input class="form-control btn btn-primary" type="submit" name="submit_file_common">
       
       </div>
     </div>
