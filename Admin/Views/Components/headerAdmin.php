@@ -14,6 +14,7 @@ require 'Functions/database.fn.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Assets/CSS/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="">
 
   <link rel="icon" type="image/x-icon" href="../favicon_d1_res.ico">
 

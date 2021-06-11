@@ -12,16 +12,19 @@ $listLandlords = getLandLords();
 //File Upload
 
 if (htmlspecialchars(isset($_POST['submit_file_common']))) {
-$lanlordNameId=$_POST['landlord_chosen'];
-$tenantNameId=$_POST['tenant_chosen'];
-
-$lanlordId=(int) filter_var($lanlordNameId, FILTER_SANITIZE_NUMBER_INT);
-$tenantId=(int) filter_var($tenantNameId,FILTER_SANITIZE_NUMBER_INT);
-
     
+    $lanlordNameId = $_POST['landlord_chosen']; //On prend le contenu de la case du loc/proprio choisi
+    $tenantNameId = $_POST['tenant_chosen'];
+
+    $lanlordId = (int) filter_var($lanlordNameId, FILTER_SANITIZE_NUMBER_INT);//Vu je j'affiche l'ID, je le filtre pour avoir juste le nombre
+    $tenantId = (int) filter_var($tenantNameId, FILTER_SANITIZE_NUMBER_INT);// et je réserve pour l'appel de fonction de upload
+    
+    //Pour le coup c'est le truc qui se rapproche le plus du spaghetti code, il y a surement une meilleure implémentation mais je suis pas assez bon,
+    // Et j'ai pas forcément envie de passer plus de temps que ça sur l'admin panel, plus faudrait que je donne un accès aux pages aussi, on verra
+
     $fileExistsFlag = 0;
-    $fileNameAndPath = "../Assets/files/common/".$_FILES(['file_common']['name']);
-    $fileName = $_FILES(['file_common']['name']);
+    $fileNameAndPath = "../Assets/files/common/" .$_FILES['file_common']['name'];
+    $fileName = $_FILES['file_common']['name'];
     /* 
     *    Checking whether the file already exists in the destination folder 
     */
@@ -48,7 +51,7 @@ $tenantId=(int) filter_var($tenantNameId,FILTER_SANITIZE_NUMBER_INT);
                 echo "<script>alert(\"Le fichier s'est correctement enregistré.\")</script>";
 
                 $_POST['fileNameAndPath'] = $fileNameAndPath;
-                $addPictureToGalery = uploadFileCommon($_POST['fileNameAndPath'],$tenantNameId,$lanlordId);
+                $addPictureToGalery = uploadFileCommon($_POST['fileNameAndPath'], $tenantId, $lanlordId);
             } else {
                 echo "<script>alert(\"Une erreur est survenue lors de l'upload de l'image. Veuillez réessayer.\")</script>";
             }

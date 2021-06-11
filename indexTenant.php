@@ -3,6 +3,10 @@ require 'Views/Components/header.php';
 
 require 'Models/IndexTenant.php';
 
+if (isset($_SESSION['connected'])) {//Display leases
+    $listLeasesTenants = getLeaseTenant($_SESSION['id']);
+}
+
 if (htmlspecialchars(isset($_POST['submit_file']))) {
     $fileExistsFlag = 0; 
     $fileNameAndPath = "Assets/files/tenant/".$_FILES['file_tenant']['name'];

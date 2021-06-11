@@ -4,36 +4,71 @@ if (isset($_SESSION['connected'])) { //On check si la personne est connecté
     if ($_SESSION['corporate_name_landlord'] != NULL) { //Check si le nom de société n'est pas vide
         echo ("<div class=\"container\"><div class=\"row justify-content-end\"><div class=\"col-auto\">Bonjour à vous " . $_SESSION['corporate_name_landlord'] . "!");
 ?>
-        
+
         <a class="btn btn-info " href="logout.php">Déconnexion</a>
-        <a class="btn btn-warning" href="profileLandlord.php">Modifier votre profil</a>
-        </div></div>
+        <a class="btn btn-outline-secondary" href="profileLandlord.php">Modifier votre profil</a>
+        </div>
+        </div>
     <?php
     } else { //Sinon on dit bonjour au prénom
         echo ("<div class=\"container\"Bonjour à toi " . $_SESSION['surname_landlord'] . " !");
     ?>
         <div class="container">
-        <a href="logout.php">Déconnexion</a>
+            <a href="logout.php">Déconnexion</a>
 
-        <a href="profileLandlord.php">Modifier votre profil</a>
+            <a href="profileLandlord.php">Modifier votre profil</a>
 
-    <?php
+        <?php
     }
 } else {
-    ?>
-    <a href="loginTenant.php">Connection locataires</a>
-    <a href="loginLandlord.php">Connection propriétaires</a>
-<?php
+        ?>
+        <a href="loginTenant.php">Connection locataires</a>
+        <a href="loginLandlord.php">Connection propriétaires</a>
+    <?php
 }
-?>
-<h3>Ceci est la page des propriétaires</h3>
+    ?>
+    <div class="row my-3 justify-content-center">
+        <div class="col-auto">
+
+            <div class="card">
+                <h5 class="card-header">Mes pièces d'identités</h5>
+                <div class="card-body">
+                <?php foreach ($listIdentityPiecesLandlords->fetchAll() as $listIdentityPiecesLandlord) {
+
+                        echo ("<form action=\"indexLandlord.php\" method=\"post\"><embed name=\"idPieceLandlord\" src=\"" . $listIdentityPiecesLandlord['file_dir_landlord'] . "\" type=\"application/pdf\" width=\"400\" height=\"400\"><input type=\"submit\" value=\"Supprimer\" name=\"delete_id_piece\"></form>");
+} ?>
+                </div>
+
+                <div class="card-footer">
+                    <form action="indexLandlord.php" method="post" enctype="multipart/form-data">
+                        <input type="file" accept="application/pdf" class="form-control" name="file_landlord"> <!-- input case du fichier à charger -->
+                        <input type="submit" class="btn btn-primary form-control" value="Ajouter une pièce d'identité (Format PDF obligatoire)" name="submit_file"> <!-- Bouton ok -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row mb-3 justify-content-center">
+        <div class="col-auto">
+            <div class="card">
+                <h5 class="card-header">Mes baux | Mes mandats</h5>
+                    <div class="card-body">
+                    <?php foreach ($listLeasesLandlords->fetchAll() as $listLeasesLandlord) {
+
+                        $getPathLease = substr($listLeasesLandlord['file_dir_common'], 3); //Removing the ../ because I uploaded it from /Admin
+
+                        echo ("<embed src=\"" . $getPathLease . "\" type=\"application/pdf\" width=\"400\" height=\"400\">");
+                    } ?>
+
+                </div>
+                <div class="card-footer">
+                    <p class="mt-2">&#9888;<!-- signe danger --> Si votre bail ne s'affiche pas, contactez <a href="mailto:jean@iligi.fr?subject=Bail non reçu&body=Bonjour,">Iligi par mail</a> ou au 0606060606</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
 
 
-<form action="indexLandlord.php" method="post" enctype="multipart/form-data">
-    <label for="files_landlord">Ajouter une pièce d'identité :</label>
-    <input type="file" name="file_landlord"> <!-- input case du fichier à charger -->
-    <input type="submit" name="submit_file"> <!-- Bouton ok -->
-</form>
-</div>
-
-
+        </div>

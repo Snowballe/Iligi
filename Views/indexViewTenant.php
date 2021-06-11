@@ -20,7 +20,15 @@ if(isset($_SESSION['connected'])) {
 }
 ?>
 <h3>Ceci est la page des locataires</h3>
-<br>
+<?php foreach ($listLeasesTenants->fetchAll() as $listLeasesTenant) { ?>
+            <?php
+  
+            $getPathLease = substr($listLeasesTenant['file_dir_common'], 3); //Removing the ../ because I uploaded it from /Admin
+
+            echo("<embed src=\"".$getPathLease."#notoolbar\" type=\"application/pdf\" width=\"400\" height=\"400\">");
+
+          }
+        ?>
 <form action="indexTenant.php" method="post" enctype="multipart/form-data">
  <label for="files_tenant">Ajouter une pièce d'identité :</label>
   <input type="file"  name="file_tenant"> <!-- input case du fichier à charger -->

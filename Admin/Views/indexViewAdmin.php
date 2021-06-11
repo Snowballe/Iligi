@@ -2,20 +2,11 @@
 
   <div class="row mb-3">
     <div class="col-auto">
-    
       <label for="search_tenant" class="form-label">Trouver un client</label>
       <input name="box_search_tenant" class="form-control" id="searchInput" type="text" placeholder="Rechercher...">
     </div>
-    <div class="col-auto">
-    <form action="index.php" method="post">
-      <input id="tenant_chosen" name="tenant_chosen" class="form-control mt-3" type="text" placeholder="Aucun locataire choisi" readonly>
-      <button onclick="document.getElementById('tenant_chosen').value = ''" class="form-control">Désélectionner</button>
-    </div>
-    <div class="col-auto">
-      <input id="landlord_chosen" name="landlord_chosen" class="form-control mt-3" type="text" placeholder="Aucun propriétaire choisi" readonly>
-      <button onclick="document.getElementById('landlord_chosen').value = ''" class="form-control">Désélectionner</button>
-      </form>
-    </div>
+
+
 
 
   </div>
@@ -59,29 +50,39 @@
   </div>
 
 
-<!----------- Modelo link ----------------------------------->
+  <!----------- Modelo link ----------------------------------->
   <div class="row justify-content-center my-3">
     <div class="col-auto">
       <a class="btn btn-primary " href="https://fnaim.modelo.fr/" target="_blank">Confimer et aller sur Modelo</a></button>
     </div>
   </div>
-<!-- ----------------------------------------------------- -->
+  <!-- ----------------------------------------------------- -->
 
 
-<!-- Send to DB ----------------------------- -->
+  <!-- Send to DB ----------------------------- -->
   <form action="index.php" method="post" enctype="multipart/form-data">
     <div class="row form-check-inline my-5 d-flex justify-content-center">
+
       <div class="col-auto">
-        
+        <input id="tenant_chosen" name="tenant_chosen" class="form-control mt-3" type="text" placeholder="Aucun locataire choisi" readonly>
+        <button onclick="document.getElementById('tenant_chosen').value = ''" class="form-control">Désélectionner</button>
+      </div>
+
+      <div class="col-auto">
         <input style="font-size:large;" class="form-control bg-secondary text-light text-center" type="text" value="Ajouter le bail rempli" aria-label="Ajouter le bail rempli" readonly>
         <input class="form-control" type="file" name="file_common"> <!-- input case du fichier à charger -->
         <input class="form-control btn btn-primary" type="submit" name="submit_file_common">
-      
       </div>
+
+      <div class="col-auto">
+        <input id="landlord_chosen" name="landlord_chosen" class="form-control mt-3" type="text" placeholder="Aucun propriétaire choisi" readonly>
+        <button onclick="document.getElementById('landlord_chosen').value = ''" class="form-control">Désélectionner</button>
+      </div>
+
     </div>
   </form>
-  
-<!-- ----------------------------------------------------- -->
+
+  <!-- ----------------------------------------------------- -->
 
   <!-- Button to delete lease (we souldn't delete one so i'll just comment it out + for now idk how to delete a file from the server) -->
   <!--

@@ -9,6 +9,29 @@ function getAllLandlords() {
 
 };
 
+function getIdPiecesLandlord($id_landlord){
+    $db=dbConnect();
+
+    $getIds=$db->prepare('SELECT file_dir_landlord FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord');
+    $getIds->execute([
+        'id_uploading_landlord'=>$id_landlord,
+    ])or die(print_r($getIds->errorInfo()));
+
+        return $getIds;
+
+}
+
+function getLeaseLandlord($id_landlord){
+    $db=dbConnect();
+
+    $getLeases=$db->prepare('SELECT file_dir_common FROM common WHERE id_landlord_concerned=:id_landlord_concerned');
+    $getLeases->execute([
+        'id_landlord_concerned'=>$id_landlord,
+    ])or die(print_r($getLeases->errorInfo()));
+    
+    return $getLeases;
+}
+
 function uploadFileLandlord($file_dir_landlord, $id_landlord){
     
     $db=dbConnect();
@@ -40,17 +63,19 @@ function uploadFileLandlord($file_dir_landlord, $id_landlord){
     ]) or die(print_r($checkNameFile->errorInfo()));
     
     
-    return $fileName;
+    return $fileName <-- Maël du passé tu es con, j'étais en train de return la mauvaise variable;
+    //Fallait return $checkNameFile éwé
 };*/
 
-function checkFileNameLandlord($pictureName) {
+function checkFileNameLandlord($pictureName, $id_uploading_landlord) {
 
     $db = dbConnect();
 
-    $checkExistingPicturesName = $db->prepare('SELECT file_dir_landlord FROM files_landlord WHERE file_dir_landlord=:file_dir_landlord');
+    $checkExistingPicturesName = $db->prepare('SELECT file_dir_landlord, id_uploading_landlord FROM files_landlord WHERE file_dir_landlord=:file_dir_landlord AND id_uploading_landlord=:id_uploading_landlord');
 
     $checkExistingPicturesName->execute([
         'file_dir_landlord' => $pictureName,
+        'id_uploading_landlord'=>$id_uploading_landlord,
     ]) or die(print_r($checkExistingPicturesName->errorInfo()));
 
     return $checkExistingPicturesName;

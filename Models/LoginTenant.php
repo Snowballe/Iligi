@@ -9,7 +9,7 @@ function checkUser($email_tenant, $password_tenant) {
 
     $user->execute([
         'email_tenant' => $email_tenant,
-    ]) or die(print_r($users->errorInfo()));
+    ]) or die(print_r($user->errorInfo()));
 
     $checkUsers = $user->fetch();
 

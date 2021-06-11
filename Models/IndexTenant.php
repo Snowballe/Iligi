@@ -9,6 +9,17 @@ function getAllUsers() {
 
 }
 
+function getLeaseTenant($id_tenant){
+    $db=dbConnect();
+
+    $getLeases=$db->prepare('SELECT file_dir_common FROM common WHERE id_tenant_concerned=:id_tenant_concerned');
+    $getLeases->execute([
+        'id_tenant_concerned'=>$id_tenant,
+    ])or die(print_r($getLeases->errorInfo()));
+    
+    return $getLeases;
+}
+
 function uploadFileTenant($file_dir_tenant, $id_tenant){
     
     $db=dbConnect();

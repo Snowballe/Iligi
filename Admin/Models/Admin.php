@@ -50,6 +50,8 @@ function uploadFileCommon($file_dir_common, $idTenant, $idLandlord)
 
   $upload->execute([
     'file_dir_common' => $file_dir_common,
+    'id_landlord_concerned'=>$idLandlord,
+    'id_tenant_concerned'=>$idTenant,
     'created_at' => date('Y-m-d H:i:s'),
   ]) or die(print_r($upload->errorInfo()));
 
