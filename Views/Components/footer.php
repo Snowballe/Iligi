@@ -35,6 +35,12 @@ $(document).ready(function(){
     };
 });
 </script>
+<!-- <script> -->
+<!-- function confirmDeleteIdPieces(){
+    if(confirm("Etes-vous sûr de supprimer toutes vos pièces d'identités ?"))
+        loca
+} -->
+<!-- </script> -->
 </body>
 
 </html>

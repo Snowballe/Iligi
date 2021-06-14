@@ -28,17 +28,20 @@ if (isset($_SESSION['connected'])) { //On check si la personne est connecté
 }
     ?>
     <div class="row my-3 justify-content-center">
-        <div class="col-auto">
+        <div class="col-12">
 
             <div class="card">
-                <h5 class="card-header">Mes pièces d'identités</h5>
-                <div class="card-body">
-                <?php foreach ($listIdentityPiecesLandlords->fetchAll() as $listIdentityPiecesLandlord) {
-
-                        echo ("<form action=\"indexLandlord.php\" method=\"post\"><embed name=\"idPieceLandlord\" src=\"" . $listIdentityPiecesLandlord['file_dir_landlord'] . "\" type=\"application/pdf\" width=\"400\" height=\"400\"><input type=\"submit\" value=\"Supprimer\" name=\"delete_id_piece\"></form>");
-} ?>
+                <div class="card-header">
+                    <h5>Mes pièces d'identités</h5>
+                    <form action="indexLandlord.php" method="post"><input  type="submit" name="delete_all_id_pieces" value="Supprimer toutes mes pièces d'identités" class="btn btn-danger text-end"></form>
                 </div>
+                <div class="card-body">
+                    <?php foreach ($listIdentityPiecesLandlords->fetchAll() as $listIdentityPiecesLandlord) {
 
+                        echo ("<div class=\"row\"><embed name=\"idPieceLandlord\" src=\"" . $listIdentityPiecesLandlord['file_dir_landlord'] . "\" type=\"application/pdf\" width=\"400\" height=\"400\"><form action=\"del_id_piece_landlord\" method=\"post\"><input type=\"submit\" class=\"btn btn-dark\" name=\"delete_id_piece\" value=\"Supprimer cette pièce\"></form></div>");
+                    } ?>
+                </div>
+                <!-- <form action=\"indexLandlord.php\" method=\"post\">... <input type=\"submit\" value=\"Supprimer\" name=\"delete_id_piece\"></form>-->
                 <div class="card-footer">
                     <form action="indexLandlord.php" method="post" enctype="multipart/form-data">
                         <input type="file" accept="application/pdf" class="form-control" name="file_landlord"> <!-- input case du fichier à charger -->
@@ -47,13 +50,13 @@ if (isset($_SESSION['connected'])) { //On check si la personne est connecté
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="row mb-3 justify-content-center">
         <div class="col-auto">
             <div class="card">
                 <h5 class="card-header">Mes baux | Mes mandats</h5>
-                    <div class="card-body">
+                <div class="card-body">
                     <?php foreach ($listLeasesLandlords->fetchAll() as $listLeasesLandlord) {
 
                         $getPathLease = substr($listLeasesLandlord['file_dir_common'], 3); //Removing the ../ because I uploaded it from /Admin
@@ -63,7 +66,9 @@ if (isset($_SESSION['connected'])) { //On check si la personne est connecté
 
                 </div>
                 <div class="card-footer">
-                    <p class="mt-2">&#9888;<!-- signe danger --> Si votre bail ne s'affiche pas, contactez <a href="mailto:jean@iligi.fr?subject=Bail non reçu&body=Bonjour,">Iligi par mail</a> ou au 0606060606</p>
+                    <p class="mt-2">&#9888;
+                        <!-- signe danger --> Si votre bail ne s'affiche pas, contactez <a href="mailto:contact@iligi.fr?subject=Bail non reçu&body=Bonjour,">Iligi par mail</a> ou au 0606060606
+                    </p>
                 </div>
             </div>
         </div>

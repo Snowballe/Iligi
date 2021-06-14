@@ -4,4 +4,4 @@
 
 - remplissage du bail a la main, je peux pas faire grand chose là
 
-- upload du bail sur la db avec l'admin panel --> lui choper l'id de bail pour le retrouver (limite le renommer)
+- upload du bail sur la db avec l'admin panel --> lui choper l'id de bail pour le retrouver 
