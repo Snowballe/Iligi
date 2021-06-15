@@ -38,12 +38,49 @@ require 'Functions/database.fn.php';
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Accueil</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="indexTenant.php">Espace Locataire</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
-              </li>
+              <?php if (isset($_SESSION['connected'])) {
+                if (isset($_SESSION['id'])) { //If it's a tenant
+                  echo ("<li class=\"nav-item\"><p class=\"fst-normal\">Bonjour à toi " . $_SESSION['surname_tenant'] . " !</p></li>");
+              ?> <li class="nav-item">
+                    <a class="nav-link" href="indexTenant.php">Espace Locataire</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="profileLandlord.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-info" href="logout.php">Déconnexion</a>
+                  </li>
+                <?php
+                } else { //Else it is a landlord
+                ?> <li class="nav-item">
+                    <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
+                  </li>
+                  <?php
+                  if ($_SESSION['corporate_name_landlord'] != NULL) {
+                    ?><li class="nav-item">
+                    <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
+                  </li><?php
+                    echo ("<li class=\"nav-item\"><a class=\"nav-link disabled\" href=\"\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour à vous " . $_SESSION['corporate_name_landlord'] . "!</a></li>");
+                  ?>
+
+                    <li class="nav-item">
+                      <a href="profileLandlord.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn btn-info" href="logout.php">Déconnexion</a>
+                    </li>
+
+
+              <?php
+                  } else { //Sinon on dit bonjour au prénom
+                    echo ("<li class=\"nav-item\"><p class=\"fst-normal\">Bonjour à toi " . $_SESSION['surname_landlord'] . " !</p></li>");
+                  }
+                }
+              } else { //Not connected
+
+              } ?>
+
+
             </ul>
           </div>
         </nav>

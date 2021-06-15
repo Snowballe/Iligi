@@ -1,4 +1,4 @@
-<div style="background-image: url(Assets/img/logscreenchill2.jpg); background:cover;">
+<!-- <div style="background-image: url(Assets/img/logscreenchill2.jpg); background:cover;"> -->
     <div class="container" >
         <div class="row justify-content-end my-3 mx-5">
             <div class="col-auto">
@@ -6,6 +6,8 @@
                 /*==========================================================================
             ===
             ===         TODO: Faire un msg de bienvenue pour les propriétaires sur la page d'accueil de BASE, je saisa pas comment faire pour l'instant
+
+                        Maël du futur : Dans le header boloss, c'est plus joli en plus. J'ai envie de pisser.
             ===
             ============================================================================
         
@@ -127,4 +129,4 @@
 
         </div>
     </div>
-</div>
+<!-- </div> -->

@@ -13,7 +13,7 @@ function getIdPiecesLandlord($id_landlord)
 {
     $db = dbConnect();
 
-    $getIds = $db->prepare('SELECT file_dir_landlord FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord');
+    $getIds = $db->prepare('SELECT file_dir_landlord, id_files_landlords FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord');
     $getIds->execute([
         'id_uploading_landlord' => $id_landlord,
     ]) or die(print_r($getIds->errorInfo()));
@@ -81,19 +81,35 @@ function incrementFileUploadNbLandlord($idLandlord)
     return $incrementNb;
 }
 
-function getPathToUnlink($id_landlord){
+function decrementFileCounter()
+{
     $db = dbConnect();
 
-    $getPath=$db->prepare('SELECT file_dir_landlord FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord');
+    $decrementNb = $db->prepare('UPDATE landlord SET nb_files_uploaded_landlord=nb_files_uploaded_landlord-1 WHERE id_landlord=:id_landlord');
+
+    $decrementNb->execute([
+        'id_landlord' => $_SESSION['id_landlord'],
+    ]) or die(print_r($decrementNb->errorInfo()));
+
+
+    return $decrementNb;
+}
+
+function getPathToUnlink($id_landlord)
+{
+    $db = dbConnect();
+
+    $getPath = $db->prepare('SELECT file_dir_landlord FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord');
 
     $getPath->execute([
-        'id_uploading_landlord'=>$id_landlord,
-    ])or die(print_r($getPath->errorInfo()));
+        'id_uploading_landlord' => $id_landlord,
+    ]) or die(print_r($getPath->errorInfo()));
 
     return $getPath;
 }
 
-function resetFileCounter($id_landlord){
+function resetFileCounter($id_landlord)
+{
     $db = dbConnect();
 
     $resetNb = $db->prepare('UPDATE landlord SET nb_files_uploaded_landlord=1 WHERE id_landlord=:id_landlord');
@@ -118,6 +134,20 @@ function deleteAllIdPieces($id_landlord)
     return $deleteIdPieces;
 }
 
+function deleteIdPiece($id_file_landlord){
+    $db=dbConnect();
+
+    $deleteSpecifiedFile=$db->prepare('DELETE FROM files_landlord WHERE id_uploading_landlord=:id_uploading_landlord AND id_files_landlords=:id_files_landlords');
+
+    $deleteSpecifiedFile->execute([
+        'id_uploading_landlord'=>$_SESSION['id_landlord'],
+        'id_files_landlords'=>$id_file_landlord,
+    ])or die(print_r($deleteSpecifiedFile->errorInfo()));
+
+    return $deleteSpecifiedFile;
+
+}
+
 function checkFileNameLandlord($pictureName, $id_uploading_landlord)
 {
 
@@ -132,4 +162,3 @@ function checkFileNameLandlord($pictureName, $id_uploading_landlord)
 
     return $checkExistingPicturesName;
 };
-

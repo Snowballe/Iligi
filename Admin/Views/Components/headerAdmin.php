@@ -23,12 +23,11 @@ require 'Functions/database.fn.php';
 
 </head>
 
-<body>
+<body style="background-color:#2e4057;">
   <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand">Iligi - Panneau Administrateur</a>
     <form class="d-flex d-end">
-    <a href="index.php" class="btn btn-light mx-3 text-dark">Home</a>
       <a class="btn btn-info" href="../index.php">Retourner à l'accueil</a>
       
     </form>

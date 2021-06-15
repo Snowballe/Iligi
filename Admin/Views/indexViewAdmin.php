@@ -2,7 +2,7 @@
 
   <div class="row mb-3">
     <div class="col-auto">
-      <label for="search_tenant" class="form-label">Trouver un client</label>
+      <label for="search_tenant" class="form-label text-light">Trouver un client</label>
       <input name="box_search_tenant" class="form-control" id="searchInput" type="text" placeholder="Rechercher...">
     </div>
 
