@@ -17,18 +17,18 @@ if(isset($_SESSION['connected'])) {
 
     if(isset($_POST['submit'])) {
 
-        if(isset($_POST['name'])){
+        if(isset($_POST['name_tenant'])){
 
-            if(!$_POST['name'] == "") {
-                $changeName = changeName($_POST['name']);   
+            if(!$_POST['name_tenant'] == "") {
+                $changeName = changeName($_POST['name_tenant']);   
             };
 
         };
 
-        if(isset($_POST['surname'])) {
+        if(isset($_POST['surname_tenant'])) {
             
-            if(!$_POST['surname'] == "") {
-                $changeSurname = changeSurname($_POST['surname']);
+            if(!$_POST['surname_tenant'] == "") {
+                $changeSurname = changeSurname($_POST['surname_tenant']);
             };
 
         };

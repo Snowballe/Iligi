@@ -10,15 +10,15 @@ function changePassword($password, $passwordConfirm) {
 
         date_default_timezone_set('Europe/Paris');
 
-        $changePassword = $db->prepare('UPDATE tenant SET password_tenant = :password_tenant, updated_at = :updated_at WHERE id = :id');
+        $changepassword_tenant = $db->prepare('UPDATE tenant SET password_tenant = :password_tenant, updated_at = :updated_at WHERE id = :id');
 
         $changepassword_tenant->execute([
             'password_tenant' => $passwordHash,
             'updated_at' => date('Y-m-d H:i:s'),
             'id' => $_SESSION['id'],
-        ]) or die(print_r($changePassword->errorInfo()));
+        ]) or die(print_r($changepassword_tenant->errorInfo()));
 
-        header('Location: indexTenant.php');
+        header('Location: profileTenant.php?passwordUpdate');
 
     } else {
         header('location: profileTenant.php?wrongPassword');
@@ -27,20 +27,42 @@ function changePassword($password, $passwordConfirm) {
 };
 
 
+// function changeName($name) {
+
+//     $db = dbConnect();
+//     date_default_timezone_set('Europe/Paris');
+    
+//     $nameToChange = $db->prepare('UPDATE tenant SET name_tenant = :name_tenant, updated_at = :updated_at WHERE id=:id');
+
+//     $nameToChange->execute([
+//          'name' => $name,
+//          'updated_at' => date('Y-m-d H:i:s'),
+//          'id' => $_SESSION['id'],
+//      ]) or die(print_r($nameToChange->errorInfo()));
+
+//     $_SESSION['name_tenant']=$name;                                       //Encore une fois je ne sais pas pourquoi cette fonction ne marhce pas, 
+//                                                                             //pas une histoire de return en plus car il n'y en a pas
+                                                                      
+//      header('Location: indexTenant.php');
+
+// };
+
 function changeName($name) {
 
     $db = dbConnect();
     date_default_timezone_set('Europe/Paris');
     
-    $changeName = $db->prepare('UPDATE tenant SET name_tenant = :name_tenant, updated_at = :updated_at WHERE id = :id');
+    $changeSurname = $db->prepare('UPDATE tenant SET name_tenant = :name_tenant, updated_at = :updated_at WHERE id = :id');
 
-    $changeName->execute([
-        'name' => $name,
+    $changeSurname->execute([
+        'name_tenant' => $name,
         'updated_at' => date('Y-m-d H:i:s'),
         'id' => $_SESSION['id'],
-    ]) or die(print_r($changeName->errorInfo()));
+    ]) or die(print_r($changeSurname->errorInfo()));
 
-    header('Location: indexTenant.php');
+    
+
+    header('Location: profileTenant.php?updateSuccess');
 
 };
 
@@ -59,7 +81,7 @@ function changeSurname($surname) {
 
     $_SESSION['surname_tenant'] = $surname;
 
-    header('Location: indexTenant.php');
+    header('Location: profileTenant.php?updateSuccess');
 
 };
 
@@ -77,7 +99,7 @@ function changePhoneNumber($phone_number) {
         'id' => $_SESSION['id'],
     ]) or die(print_r($changePhoneNumber->errorInfo()));
 
-    header('Location: indexTenant.php');
+    header('Location: profileTenant.php?updateSuccess');
 
 };
 
@@ -96,7 +118,7 @@ function changeEmail($email) {
 
     $_SESSION['email'] = $email;
 
-    header('Location: indexTenant.php');
+    header('Location: profileTenant.php?updateSuccess');
 
 };
 
@@ -113,7 +135,7 @@ function changeRoommate($nb_roommates){
         'updated_at'=>date('Y-m-d H:i:s'),
         'id'=>$_SESSION['id'],
     ]) or die(print_r($changeRoommate->errorInfo()));
-    header('Location: indexTenant.php');
+    header('Location: profileTenant.php?updateSuccess');
 
 }
 

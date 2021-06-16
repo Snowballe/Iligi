@@ -20,7 +20,7 @@ require 'Functions/database.fn.php';
 
 <body>
   <div class="bg-light">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <nav class="col navbar navbar-expand-lg navbar-light">
 
@@ -40,48 +40,62 @@ require 'Functions/database.fn.php';
               </li>
               <?php if (isset($_SESSION['connected'])) {
                 if (isset($_SESSION['id'])) { //If it's a tenant
-                  echo ("<li class=\"nav-item\"><p class=\"fst-normal\">Bonjour à toi " . $_SESSION['surname_tenant'] . " !</p></li>");
-              ?> <li class="nav-item">
+                  ?> <li class="nav-item">
                     <a class="nav-link" href="indexTenant.php">Espace Locataire</a>
-                  </li>
+                  </li><?php
+                  echo ("</ul><ul class=\"navbar-nav ms-auto\"><li class=\"nav-item\"><p class=\"nav-link\">Bonjour à toi " . $_SESSION['surname_tenant'] . " !</p></li>");
+              ?>
                   <li class="nav-item">
-                    <a href="profileLandlord.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
+                    <a href="profileTenant.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link btn btn-info" href="logout.php">Déconnexion</a>
                   </li>
-                <?php
-                } else { //Else it is a landlord
-                ?> <li class="nav-item">
-                    <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
-                  </li>
+            </ul>
                   <?php
+                } else { //Else it is a landlord
+
                   if ($_SESSION['corporate_name_landlord'] != NULL) {
-                    ?><li class="nav-item">
-                    <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
-                  </li><?php
-                    echo ("<li class=\"nav-item\"><a class=\"nav-link disabled\" href=\"\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour à vous " . $_SESSION['corporate_name_landlord'] . "!</a></li>");
-                  ?>
 
-                    <li class="nav-item">
-                      <a href="profileLandlord.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link btn btn-info" href="logout.php">Déconnexion</a>
-                    </li>
+                  ?><li class="nav-item">
+                      <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
+                    </li><?php
 
+                          echo ("</ul><ul class=\"navbar-nav ms-auto\"><li class=\"nav-item\"><p class=\"nav-link \" href=\"\" tabindex=\"-1\" aria-disabled=\"true\">Bonjour à vous " . $_SESSION['corporate_name_landlord'] . "!</p></li>"); ?>
+           
+              <li class="nav-item">
+                <a href="profileLandlord.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-info" href="logout.php">Déconnexion</a>
+              </li>
+            </ul>
+          <?php
 
-              <?php
                   } else { //Sinon on dit bonjour au prénom
                     echo ("<li class=\"nav-item\"><p class=\"fst-normal\">Bonjour à toi " . $_SESSION['surname_landlord'] . " !</p></li>");
+          ?><li class="nav-item">
+              <a class="nav-link" href="indexLandlord.php">Espace Propriétaire</a>
+            </li>
+        <?php
                   }
                 }
               } else { //Not connected
-
+        ?>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link btn btn-light text-dark" href="loginTenant.php">Connection locataires</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-dark text-light" href="loginLandlord.php">Connection propriétaires</a>
+          </li>
+        </ul>
+      <?php
               } ?>
 
 
-            </ul>
+      </ul>
           </div>
         </nav>
       </div>

@@ -1,59 +1,82 @@
-<?php
+<div class="container">
 
-if(isset($_GET['wrongPassword'])) {
+    <?php
 
-?>
-<p style="color: red;">Les mots de passe ne correspond pas</p>
-<?php
+    if (isset($_GET['wrongPassword'])) {
 
-}
-
-?>
-
-<form action="profileTenant.php" method="post">
-
-    <label for="password">Changez de mot de passe</label>
-    <input type="password" name="password" placeholder="****" required>
+        ?><p style="color: red;">Les mots de passe ne correspondent pas</p><?php
+    }
     
+    if (isset($_GET['passwordUpdate'])) {
+
+        ?><p style="color: green;">Le nouveau mot de passe a bien été enregistré</p><?php
+                                                                            
+    }
+
+    if(isset($_GET['updateSuccess'])){
+    ?><p style="color: green;">Vos nouvelles coordonées on été enregistrées</p><?php
+                                                                            
+    }?>
     
-    <label for="password">Confirmez le mot de passe</label>
-    <input type="password" name="passwordConfirm" placeholder="****" required>
+    <div class="row mb-3 justify-content-evenly">
+        <div class="col-auto">
+            <form action="profileTenant.php" method="post">
 
-    <input type="submit" value="submit" name="submit-password">
+                <div class="col-auto">
+                    <label class="col-form-label" for="password">Changez votre mot de passe</label>
+                    <input class="form-control" type="password" name="password" placeholder="****" required>
+                </div>
+                <div class="col-auto">
+                    <label class="col-form-label" for="password">Confirmez votre mot de passe</label>
+                    <input class="form-control" type="password" name="passwordConfirm" placeholder="****" required>
+                </div>
+                <div class="col-auto">
+                    <input class="btn btn-light" type="submit" value="Changer mon mot de passe" name="submit-password">
+                </div>
 
-</form>
-<br>
-<br>
-<br>
-
-
-
-
-<form action="profileTenant.php" method="post">
-
-    <label for="name">Changez votre nom</label>
-    <input type="text" name="name" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22">
-    <br>
-
-    <label for="surname">Changez votre prénom</label>
-    <input type="text" name="surname" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22">
-
-    <br>
-   
+            </form>
+        </div>
 
 
-    <label for="phone_number">Changez votre numéro de téléphone</label>
-    <input type="tel" name="phone_number" placeholder="your phone" pattern="[0-9]{10}">
-    <br>
 
-    <label for="email">Changez votre email</label>
-    <input type="email" name="email" placeholder="Votre mail">
-    <br>
-    <label for="roommate">Changez votre nombre de colocataires :</label>
-    <input type="number" name="nb_roommates" pattern="[0-30]">
+        <div class="col-auto">
+            <form action="profileTenant.php" method="post">
 
-    <input type="submit" value="submit" name="submit">
+                <div class="col-auto">
+                    <label for="name_surname_tenant">Changez votre nom/prénom</label>
+                    <input class="form-control" type="text" name="name_tenant" placeholder="Nom" minlength="4" mxlength="20" size="22">
+                    <input class="form-control" type="text" name="surname_tenant" placeholder="Prénom" minlength="2" mxlength="20" size="22">
+                </div>
+
+                <div class="col-auto">
+                    <label for="phone_number">Changez votre numéro de téléphone</label>
+                    <input class="form-control" type="tel" name="phone_number" placeholder="N°" pattern="[0-9]{10}">
+
+                    <label for="email">Changez votre email</label>
+                    <input class="form-control" type="email" name="email" placeholder="Votre email">
+                    <label for="nb_roommates_tenant" class="form-label">Nombre de colocataires :</label>
+
+                    <select name="nb_roommates_tenant" class="form-select" id="">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="9+">9+</option>
+                    </select>
+                </div>
+
+                <div class="col-auto">
+                    <input class="btn btn-light" type="submit" value="Changer mes coordonnées" name="submit">
+                </div>
 
 
-</form>
-
+            </form>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,19 @@
 
 //   $encodedTenantNames=json_encode($fetchedTenants);
 
+function changeUserNotice($textToStore){
+  $db=dbConnect();
+
+  $ChangeText=$db->prepare('INSERT INTO admin_user_notice (commercial_notice) VALUES new_commercial_notice=:new_commercial_notice');
+
+  $ChangeText->execute([
+    'new_commercial_notice'=>$textToStore,
+  ]);
+
+  header('Location: index.php?editSuccess');
+
+}
+
 function getTenants()
 {
   $db = dbConnect();

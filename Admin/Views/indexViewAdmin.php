@@ -1,5 +1,7 @@
 <div class="container">
-
+<?php if(isset($_GET['editSuccess'])){
+  ?><p style="color:white;" >La notice d'utilisation commerciale a bien été mise à jour.</p><?php
+} ?>
   <div class="row mb-3">
     <div class="col-auto">
       <label for="search_tenant" class="form-label text-light">Trouver un client</label>
@@ -69,7 +71,7 @@
       </div>
 
       <div class="col-auto">
-        <input style="font-size:large;" class="form-control bg-secondary text-light text-center" type="text" value="Ajouter le bail rempli" aria-label="Ajouter le bail rempli" readonly>
+        <p style="margin-bottom: 0px;" class="form-control bg-secondary text-light text-center fs-5" type="text">Ajouter le bail rempli</p>
         <input class="form-control" type="file" name="file_common"> <!-- input case du fichier à charger -->
         <input class="form-control btn btn-primary" type="submit" name="submit_file_common">
       </div>
@@ -84,6 +86,8 @@
 
   <!-- ----------------------------------------------------- -->
 
+  <!-- j'ai la merde de l'implémenter -->
+
   <!-- Button to delete lease (we souldn't delete one so i'll just comment it out + for now idk how to delete a file from the server) -->
   <!--
   <div class="row">
@@ -95,5 +99,25 @@
       </form>
     </div>
   </div>
--->
+  -->
+
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <form action="index.php" method="post">
+        <div class="card">
+          <div class="card-header">
+            <h5>Changer la notice d'utilisation :</h5>
+          </div>
+          <div class="card-body">
+            <textarea name="change_notice" id="" cols="50" rows="10" class="card-text"></textarea>
+          </div>
+          <ul class="list-group list-group-flush btn"><!-- erk le btn -->
+            <li class="list-group-item"><input type="submit" class="btn btn-primary " name="change_user_notice" value="Changer la notice d'info."></li>
+          </ul>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
 </div>

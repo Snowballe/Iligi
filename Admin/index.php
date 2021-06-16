@@ -6,6 +6,10 @@ require 'Models/Admin.php';
 
 $listTenants = getTenants();
 $listLandlords = getLandLords();
+//============================================ TODO = faire apparaitre le texte de la notice DANS la case, comme ça si on veut corriger quelque chose on met pas 3 plombes.
+if(isset($_POST['change_user_notice'])){//===================================================
+    changeUserNotice($_POST['change_notice']);//================================================
+}
 
 //-------------------------------------------------------------------------
 // ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓

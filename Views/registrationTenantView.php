@@ -22,7 +22,7 @@
                 <div class="col-auto">
                     <label for="tel_tenant" class="form-label">N° de téléphone : <span style="color:red;">*</span></label>
                     <input type="tel" class="form-control" name="tel_tenant" placeholder="N°" pattern="[0-9]{10}" required>
-                    <label for="nb_roommates_tenant" class="form-label">Nombre de colocataires :</span></label>
+                    <label for="nb_roommates_tenant" class="form-label">Nombre de colocataires :</label>
 
                     <select name="nb_roommates_tenant" class="form-select" id="">
                         <option value="0" selected>0</option>

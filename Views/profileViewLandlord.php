@@ -1,56 +1,69 @@
-<?php
+<div class="container">
 
-if(isset($_GET['wrongPassword'])) {
+    <?php
 
-?>
-<p style="color: red;">Les mots de passe ne correspond pas</p>
-<?php
+    if (isset($_GET['wrongPassword'])) {
 
-}
-
-?>
-
-<form action="profileLandlord.php" method="post">
-
-    <label for="password">Changez de mot de passe</label>
-    <input type="password" name="password" placeholder="****" required>
+        ?><p style="color: red;">Les mots de passe ne correspondent pas</p><?php
+    }
     
+    if (isset($_GET['passwordUpdate'])) {
+
+        ?><p style="color: green;">Le nouveau mot de passe a bien été enregistré</p><?php
+                                                                            
+    }
+
+    if(isset($_GET['updateSuccess'])){
+    ?><p style="color: green;">Vos nouvelles coordonnées ont été enregistrées</p><?php
+                                                                            
+    }?>
     
-    <label for="password">Confirmez le mot de passe</label>
-    <input type="password" name="passwordConfirm" placeholder="****" required>
+    <div class="row mb-3 justify-content-evenly">
+        <div class="col-auto">
+            <form action="profileLandlord.php" method="post">
 
-    <input type="submit" value="submit" name="submit-password">
+                <div class="col-auto">
+                    <label class="col-form-label" for="password">Changez votre mot de passe</label>
+                    <input class="form-control" type="password" name="password" placeholder="****" required>
+                </div>
+                <div class="col-auto">
+                    <label class="col-form-label" for="password">Confirmez votre mot de passe</label>
+                    <input class="form-control" type="password" name="passwordConfirm" placeholder="****" required>
+                </div>
+                <div class="col-auto">
+                    <input class="btn btn-light" type="submit" value="Changer mon mot de passe" name="submit-password_landlord">
+                </div>
 
-</form>
-<br>
-<br>
-<br>
-
-
-
-
-<form action="profileLandlord.php" method="post">
-
-    <label for="name">Changez votre nom</label>
-    <input type="text" name="name" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22">
-    <br>
-
-    <label for="surname">Changez votre prénom</label>
-    <input type="text" name="surname" placeholder="Votre nom ici" minlength="4" mxlength="20" size="22">
-
-    <br>
-   
+            </form>
+        </div>
 
 
-    <label for="phone_number">Changez votre numéro de téléphone</label>
-    <input type="tel" name="phone_number" placeholder="your phone" pattern="[0-9]{10}">
-    <br>
 
-    <label for="email">Changez votre email</label>
-    <input type="email" name="email" placeholder="Votre mail">
-    <br>
-    <br>
+        <div class="col-auto">
+            <form action="profileLandlord.php" method="post">
 
-    <input type="submit" value="submit" name="submit">
-</form>
+                <div class="col-auto">
+                    <label for="name_surname_landlord">Changez votre nom/prénom</label>
+                    <input class="form-control" type="text" name="name_landlord" placeholder="Nom" minlength="4" mxlength="20" size="22">
+                    <input class="form-control" type="text" name="surname_landlord" placeholder="Prénom" minlength="2" mxlength="20" size="22">
+                </div>
 
+                <div class="col-auto">
+                    <label for="phone_number">Changez votre numéro de téléphone</label>
+                    <input class="form-control" type="tel" name="phone_number" placeholder="N°" pattern="[0-9]{10}">
+
+                    <label for="email">Changez votre email</label>
+                    <input class="form-control" type="email" name="email" placeholder="Votre email">
+            
+
+                </div>
+
+                <div class="col-auto">
+                    <input class="btn btn-light" type="submit" value="Changer mes coordonnées" name="submit">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

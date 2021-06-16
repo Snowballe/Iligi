@@ -5,7 +5,7 @@ require 'Views/Components/header.php';
 if(isset($_SESSION['connected'])) {
     require 'Models/ProfileLandlord.php';
 
-    if(isset($_POST['submit-password'])) {
+    if(isset($_POST['submit-password_landlord'])) {
 
         if(isset($_POST['password']) && isset($_POST['passwordConfirm'])){
 
@@ -17,18 +17,19 @@ if(isset($_SESSION['connected'])) {
 
     if(isset($_POST['submit'])) {
 
-        if(isset($_POST['name'])){
+        if(isset($_POST['name_landlord'])){
 
-            if(!$_POST['name'] == "") {
-                $changeName = changeName($_POST['name']);   
+            if(!$_POST['name_landlord'] == "") {
+                $changeName = changeName($_POST['name_landlord']);   
+                
             };
 
         };
 
-        if(isset($_POST['surname'])) {
+        if(isset($_POST['surname_landlord'])) {
             
-            if(!$_POST['surname'] == "") {
-                $changeSurname = changeSurname($_POST['surname']);
+            if(!$_POST['surname_landlord'] == "") {
+                $changeSurname = changeSurname($_POST['surname_landlord']);
             };
 
         };
@@ -60,6 +61,6 @@ if(isset($_SESSION['connected'])) {
     require 'Views/Components/footer.php';
 
 } else {
-    header('Location: login.php');
+    header('Location: index.php');
 };
 ?>

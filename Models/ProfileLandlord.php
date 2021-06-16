@@ -17,7 +17,7 @@ function changePassword($password, $passwordConfirm) {
             'id_landlord' => $_SESSION['id_landlord'],
         ]) or die(print_r($changePassword->errorInfo()));
 
-        header('Location: indexLandlord.php');
+        header('Location: profileLandlord.php?passwordUpdate');
 
     } else {
         header('location: profileLandlord.php?wrongPassword');
@@ -39,7 +39,7 @@ function changeName($name) {
         'id_landlord' => $_SESSION['id_landlord'],
     ]) or die(print_r($changeName->errorInfo()));
 
-    header('Location: indexLandlord.php');
+    header('Location: profileLandlord.php?updateSuccess');
 
 };
 
@@ -58,7 +58,7 @@ function changeSurname($surname) {
 
     $_SESSION['surname_landlord'] = $surname;
 
-    header('Location: indexLandlord.php');
+    header('Location: profileLandlord.php?updateSuccess');
 
 };
 
@@ -76,7 +76,7 @@ function changePhoneNumber($phone_number) {
         'id_landlord' => $_SESSION['id_landlord'],
     ]) or die(print_r($changePhoneNumber->errorInfo()));
 
-    header('Location: indexLandlord.php');
+    header('Location: profileLandlord.php?updateSuccess');
 
 };
 
@@ -95,7 +95,7 @@ function changeEmail($email) {
 
     $_SESSION['email_landlord'] = $email;
 
-    header('Location: indexLandlord.php');
+    header('Location: profileLandlord.php?updateSuccess');
 
 };
 

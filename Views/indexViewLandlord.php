@@ -1,48 +1,25 @@
+<div class="container">
+
+
 <?php
-if (isset($_SESSION['connected'])) { //On check si la personne est connecté
 
-    if ($_SESSION['corporate_name_landlord'] != NULL) { //Check si le nom de société n'est pas vide
-        echo ("<div class=\"container\"><div class=\"row justify-content-end\"><div class=\"col-auto\">Bonjour à vous " . $_SESSION['corporate_name_landlord'] . "!");
-?>
-
-        <a class="btn btn-info " href="logout.php">Déconnexion</a>
-        <a class="btn btn-outline-secondary" href="profileLandlord.php">Modifier votre profil</a>
-        </div>
-        </div>
-    <?php
-    } else { //Sinon on dit bonjour au prénom
-        echo ("<div class=\"container\"Bonjour à toi " . $_SESSION['surname_landlord'] . " !");
-    ?>
-        <div class="container">
-            <a href="logout.php">Déconnexion</a>
-
-            <a href="profileLandlord.php">Modifier votre profil</a>
-
-        <?php
-    }
-} else {
-        ?>
-        <a class="btn btn-outline-primary" href="loginTenant.php">Connection locataires</a>
-        <a class="btn btn-outline-info" href="loginLandlord.php">Connection propriétaires</a>
-    <?php
-}
 //Success -----------------------------------
 if (isset($_GET['fullDelSuccess'])) {
-    ?>
-        <p style="color: green;">Vos pièces d'identités ont bien été supprimés.</p>
-    <?php
+?>
+    <p style="color: green;">Vos pièces d'identités ont bien été supprimés.</p>
+<?php
 }
 
 if (isset($_GET['singleDelIdSuccess'])) {
-    ?>
-        <p style="color: green;">Votre pièce d'identité a bien été supprimé.</p>
-    <?php
+?>
+    <p style="color: green;">Votre pièce d'identité a bien été supprimé.</p>
+<?php
 }
 
 if (isset($_GET['fileSaved'])) {
-    ?>
-        <p style="color: green;">Le fichier s'est correctement enregistré.</p>
-    <?php
+?>
+    <p style="color: green;">Le fichier s'est correctement enregistré.</p>
+<?php
 
 }
 
@@ -51,42 +28,41 @@ if (isset($_GET['fileSaved'])) {
 
 //Errors -----------------------------------
 if (isset($_GET['wrongFormat'])) {
-    ?>
-        <p style="color: red;">Fichier non enregistré car le format ne correspond pas (format PDF obligatoire)</p>
-    <?php
+?>
+    <p style="color: red;">Fichier non enregistré car le format ne correspond pas (format PDF obligatoire)</p>
+<?php
 
 }
 
 if (isset($_GET['fileOverflow'])) {
-    ?>
-        <p style="color: red;">Vous avez atteint la limite de mises en ligne maximum.</p>
-    <?php
+?>
+    <p style="color: red;">Vous avez atteint la limite de mises en ligne maximum.</p>
+<?php
 
 }
 
 if (isset($_GET['ErrorUpload'])) {
-    ?>
-        <p style="color: red;">Une erreur est survenue lors de la mise en ligne du fichier.</p>
-    <?php
+?>
+    <p style="color: red;">Une erreur est survenue lors de la mise en ligne du fichier.</p>
+<?php
 
 }
 
 if (isset($_GET['fileTooLarge'])) {
-    ?>
-        <p style="color: red;">Le fichier chargé est trop lourd (2Mo max) ! Tentez de le compresser.</p>
-    <?php
+?>
+    <p style="color: red;">Le fichier chargé est trop lourd (2Mo max) ! Tentez de le compresser.</p>
+<?php
 
 }
 
 if (isset($_GET['fileAlreadyExisting'])) {
-    ?>
-        <p style="color: red;">Le fichier existe déjà.</p>
-    <?php
+?>
+    <p style="color: red;">Le fichier existe déjà.</p>
+<?php
 
 }
 //--------------------------------------------
-    ?>
-
+?>
     <div class="row my-3 justify-content-center">
         <div class="col-12">
 
@@ -98,7 +74,7 @@ if (isset($_GET['fileAlreadyExisting'])) {
                 <div class="card-body">
                     <?php foreach ($listIdentityPiecesLandlords->fetchAll() as $listIdentityPiecesLandlord) {
 
-                        echo ("<form action=\"indexLandlord.php\" method=\"post\"><div class=\"row\"><embed name=\"idPieceLandlord\" src=\"" . $listIdentityPiecesLandlord['file_dir_landlord'] . "\" type=\"application/pdf\" width=\"400\" height=\"400\"><div class=\" d-grid gap-2\"><input type=\"hidden\" value=\"". $listIdentityPiecesLandlord['id_files_landlords']."\" name=\"id_nb_file_landlord\"><input type=\"submit\" class=\"btn btn-dark\" name=\"delete_id_piece\" value=\"Supprimer cette pièce\"></form></div></div>");
+                        echo ("<form action=\"indexLandlord.php\" method=\"post\"><div class=\"row\"><embed name=\"idPieceLandlord\" src=\"" . $listIdentityPiecesLandlord['file_dir_landlord'] . "\" type=\"application/pdf\" width=\"400\" height=\"400\"><div class=\" d-grid gap-2\"><input type=\"hidden\" value=\"" . $listIdentityPiecesLandlord['id_files_landlords'] . "\" name=\"id_nb_file_landlord\"><input type=\"submit\" class=\"btn btn-dark\" name=\"delete_id_piece\" value=\"Supprimer cette pièce\"></form></div></div>");
                     } ?>
                 </div>
                 <div class="card-footer">
@@ -135,4 +111,5 @@ if (isset($_GET['fileAlreadyExisting'])) {
     </form>
 
 
-        </div>
+
+</div>

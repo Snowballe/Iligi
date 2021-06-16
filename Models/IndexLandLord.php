@@ -1,13 +1,6 @@
 <?php
 
-function getAllLandlords()
-{
 
-    $db = dbConnect();
-
-    $users = $db->query('SELECT * FROM landlord');
-    return $users;
-};
 
 function getIdPiecesLandlord($id_landlord)
 {
