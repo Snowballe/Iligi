@@ -14,21 +14,31 @@
 function changeUserNotice($textToStore){
   $db=dbConnect();
 
-  $ChangeText=$db->prepare('INSERT INTO admin_user_notice (commercial_notice) VALUES new_commercial_notice=:new_commercial_notice');
+  $ChangeText=$db->prepare('UPDATE admin_user_notice SET commercial_notice=:new_commercial_notice WHERE id_notice=1');
 
   $ChangeText->execute([
     'new_commercial_notice'=>$textToStore,
-  ]);
+  ])or die(print_r($ChangeText->errorInfo()));;
 
   header('Location: index.php?editSuccess');
 
+}
+
+function getNotice(){
+  $db=dbConnect();
+
+  $getText=$db->prepare('SELECT commercial_notice FROM admin_user_notice WHERE id_notice=1');
+
+  $getText->execute()or die(print_r($getText->errorInfo()));;
+
+  return $getText;
 }
 
 function getTenants()
 {
   $db = dbConnect();
   $searchTenantNames = $db->prepare("SELECT id, surname_tenant, name_tenant FROM tenant");
-  $searchTenantNames->execute();
+  $searchTenantNames->execute()or die(print_r($searchTenantNames->errorInfo()));;
   return $searchTenantNames;
 }
 
@@ -36,7 +46,7 @@ function getTenants()
 function getLandLords(){
   $db = dbConnect();
   $searchLandlordNames = $db->prepare("SELECT id_landlord, surname_landlord, name_landlord, corporate_name_landlord FROM landlord");
-  $searchLandlordNames->execute();
+  $searchLandlordNames->execute()or die(print_r($searchLandlordNames->errorInfo()));;
   return $searchLandlordNames;
 }
 
@@ -46,7 +56,7 @@ function deleteLease($leaseToDelete)
   $delQuery = $db->prepare("DELETE * FROM common where id=:id");
   $delQuery->execute([
     'id' => $leaseToDelete,
-  ]);
+  ])or die(print_r($delQuery->errorInfo()));;
   return $delQuery;
 };
 

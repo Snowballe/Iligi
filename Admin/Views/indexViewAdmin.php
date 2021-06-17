@@ -1,7 +1,19 @@
 <div class="container">
-<?php if(isset($_GET['editSuccess'])){
-  ?><p style="color:white;" >La notice d'utilisation commerciale a bien été mise à jour.</p><?php
-} ?>
+  <?php if (isset($_GET['editSuccess'])) {
+  ?>
+   
+
+    <div class="alert alert-success  alert-dismissible fade show" role="alert">
+
+      
+
+      <p>La notice a bien été modifiée.</p>
+
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+  <?php
+  } ?>
   <div class="row mb-3">
     <div class="col-auto">
       <label for="search_tenant" class="form-label text-light">Trouver un client</label>
@@ -109,9 +121,16 @@
             <h5>Changer la notice d'utilisation :</h5>
           </div>
           <div class="card-body">
-            <textarea name="change_notice" id="" cols="50" rows="10" class="card-text"></textarea>
+            <?php
+            foreach ($userNotices->fetchAll() as $userNotice) {
+
+              echo ("<textarea name=\"change_notice\" cols=\"50\" rows=\"10\" class=\"card-text\">" . $userNotice['commercial_notice'] . "</textarea>");
+            }
+            ?>
+
           </div>
-          <ul class="list-group list-group-flush btn"><!-- erk le btn -->
+          <ul class="list-group list-group-flush btn">
+            <!-- erk le btn -->
             <li class="list-group-item"><input type="submit" class="btn btn-primary " name="change_user_notice" value="Changer la notice d'info."></li>
           </ul>
         </div>

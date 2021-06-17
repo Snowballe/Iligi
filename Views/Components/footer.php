@@ -1,4 +1,4 @@
-<footer class="">
+<footer style="position: absolute; margin-bottom:0px; width:100%;">
     <div class="bg-light">
         <div class="container">
         <hr class="mb-3">
@@ -11,10 +11,11 @@
                         <li class="list-inline-item">|</li>
                         <li class="list-inline-item"><a class="text-decoration-none" href="#">Vie Privée</a></li>
                         <li class="list-inline-item">|</li>
+                        <li class="list-inline-item"><a class="text-decoration-none" href="#">Mentions légales</a></li>
+                        <li class="list-inline-item">|</li>
                         <li class="list-inline-item"><a class="text-decoration-none" href="#">Conditions d'utilisation</a></li>
                         <li class="list-inline-item">|</li>
-                        
-                        <li class="list-inline-item"><img src="Assets/icons/icons/bootstrap.svg" width="30" height="30" title="Bootstrap" alt="Bootstrap SVG"></li>
+                        <a target="_blank" href="https://getbootstrap.com/"><li class="list-inline-item"><img src="Assets/icons/icons/bootstrap.svg" width="30" height="30" title="Bootstrap" alt="Bootstrap SVG"></li></a>
                     </ul>
                 </div>
             </div>
