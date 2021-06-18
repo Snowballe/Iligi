@@ -69,7 +69,7 @@ if (isset($_GET['fileAlreadyExisting'])) {
             <div class="card">
                 <div class="card-header justify-content-between">
                     <h5>Mes pièces d'identités</h5>
-                    <form action="indexTenant.php" method="post"><input type="submit" name="delete_all_id_pieces" value="Supprimer toutes mes pièces d'identités" class="btn btn-danger"></form>
+                    <form action="indexTenant.php" method="post"><input onclick="return confirm('Êtes-vous sûr de supprimer l\'intégralité de vos pièces d\'identités ?')" type="submit" name="" value="Supprimer toutes mes pièces d'identités" class="btn btn-danger"></form>
                 </div>
                 <div class="card-body">
                     <?php foreach ($listIdentityPiecesTenants->fetchAll() as $listIdentityPiecesTenant) {

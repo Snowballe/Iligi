@@ -4,8 +4,13 @@ require 'Views/Components/header.php';
 require 'Models/IndexLandlord.php';
 
 if (isset($_SESSION['connected'])) { //Display leases & id pieces 
+    if(isset($_SESSION['id'])){
+        header('Location: index.php');//Forbidding access for tenants
+    }
     $listLeasesLandlords = getLeaseLandlord($_SESSION['id_landlord']);
     $listIdentityPiecesLandlords = getIdPiecesLandlord($_SESSION['id_landlord']);
+}else{
+    header('Location: index.php');//Same for not connected
 }
 
 //------------------------------------------------------------- function to delete all of the ID pieces

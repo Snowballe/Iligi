@@ -16,6 +16,7 @@ require 'Functions/database.fn.php';
   <title>Iligi</title>
   <link rel="icon" type="image/x-icon" href="https://static-cdn.website-editor.net/runtime/favicon_d1_res.ico">
   <link rel="stylesheet" href="Assets/CSS/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 
 <body>
@@ -38,12 +39,18 @@ require 'Functions/database.fn.php';
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Accueil</a>
               </li>
+              <li class="nav-item">
+              <a href="services.php" class="nav-link">Nos services</a>
+              </li>
+              <li class="nav-item">
+              <a href="pricing.php" class="nav-link">Tarifs</a>
+              </li>
               <?php if (isset($_SESSION['connected'])) {
                 if (isset($_SESSION['id'])) { //If it's a tenant
                   ?> <li class="nav-item">
                     <a class="nav-link" href="indexTenant.php">Espace Locataire</a>
                   </li><?php
-                  echo ("</ul><ul class=\"navbar-nav ms-auto\"><li class=\"nav-item\"><p class=\"nav-link\">Bonjour à toi " . $_SESSION['surname_tenant'] . " !</p></li>");
+                  echo ("</ul><ul class=\"navbar-nav ms-auto\"><li class=\"nav-item\"><p class=\"nav-link\">Bonjour, " . $_SESSION['surname_tenant'] . "</p></li>");
               ?>
                   <li class="nav-item">
                     <a href="profileTenant.php" class="nav-link btn btn-outline-info">Modifier votre profil</a>

@@ -29,9 +29,8 @@
                 <div class="col-auto">
                     <label class="col-form-label" for="password">Confirmez votre mot de passe</label>
                     <input class="form-control" type="password" name="passwordConfirm" placeholder="****" required>
-                </div>
-                <div class="col-auto">
-                    <input class="btn btn-light" type="submit" value="Changer mon mot de passe" name="submit-password_landlord">
+                
+                    <input class="btn btn-warning form-control" type="submit" value="Changer mon mot de passe" name="submit-password_landlord">
                 </div>
 
             </form>
@@ -54,15 +53,8 @@
 
                     <label for="email">Changez votre email</label>
                     <input class="form-control" type="email" name="email" placeholder="Votre email">
-            
-
+                    <input class="btn btn-dark form-control" type="submit" value="Changer mes coordonnées" name="submit">
                 </div>
-
-                <div class="col-auto">
-                    <input class="btn btn-light" type="submit" value="Changer mes coordonnées" name="submit">
-                </div>
-
-
             </form>
         </div>
     </div>

@@ -31,7 +31,7 @@
                     <input class="form-control" type="password" name="passwordConfirm" placeholder="****" required>
                 </div>
                 <div class="col-auto">
-                    <input class="btn btn-light" type="submit" value="Changer mon mot de passe" name="submit-password">
+                    <input class="btn btn-warning" type="submit" value="Changer mon mot de passe" name="submit-password">
                 </div>
 
             </form>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="col-auto">
-                    <input class="btn btn-light" type="submit" value="Changer mes coordonnées" name="submit">
+                    <input class="btn btn-dark" type="submit" value="Changer mes coordonnées" name="submit">
                 </div>
 
 

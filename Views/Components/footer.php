@@ -1,4 +1,4 @@
-<footer style="position: absolute; margin-bottom:0px; width:100%;">
+<footer class="fixed-bottom">
     <div class="bg-light">
         <div class="container">
         <hr class="mb-3">
@@ -7,13 +7,13 @@
 
                 <div class="col ">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a class="text-decoration-none" href="#">À propos</a></li>
+                        <li class="list-inline-item"><a class="text-decoration-none" href="about.php">À propos</a></li>
                         <li class="list-inline-item">|</li>
-                        <li class="list-inline-item"><a class="text-decoration-none" href="#">Vie Privée</a></li>
+                        <li class="list-inline-item"><a class="text-decoration-none" href="cookies.php">Vie Privée</a></li>
                         <li class="list-inline-item">|</li>
-                        <li class="list-inline-item"><a class="text-decoration-none" href="#">Mentions légales</a></li>
+                        <li class="list-inline-item"><a class="text-decoration-none" href="legalNotice.php">Mentions légales</a></li>
                         <li class="list-inline-item">|</li>
-                        <li class="list-inline-item"><a class="text-decoration-none" href="#">Conditions d'utilisation</a></li>
+                        <li class="list-inline-item"><a class="text-decoration-none" href="termsOfUse">Conditions d'utilisation</a></li>
                         <li class="list-inline-item">|</li>
                         <a target="_blank" href="https://getbootstrap.com/"><li class="list-inline-item"><img src="Assets/icons/icons/bootstrap.svg" width="30" height="30" title="Bootstrap" alt="Bootstrap SVG"></li></a>
                     </ul>

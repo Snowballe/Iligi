@@ -4,8 +4,13 @@ require 'Views/Components/header.php';
 require 'Models/IndexTenant.php';
 
 if (isset($_SESSION['connected'])) { //Display leases & id pieces 
+    if(isset($_SESSION['id_landlord'])){
+        header('Location: index.php');  
+    }
     $listLeasesTenants = getLeaseTenant($_SESSION['id']);
     $listIdentityPiecesTenants = getIdPiecesTenant($_SESSION['id']);
+}else{
+    header('Location: index.php');
 }
 
 //------------------------------------------------------------- function to delete all of the ID pieces
