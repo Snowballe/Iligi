@@ -39,9 +39,7 @@ require 'Functions/database.fn.php';
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Accueil</a>
               </li>
-              <li class="nav-item">
-              <a href="services.php" class="nav-link">Nos services</a>
-              </li>
+            
               <li class="nav-item">
               <a href="pricing.php" class="nav-link">Tarifs</a>
               </li>

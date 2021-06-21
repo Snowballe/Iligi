@@ -57,7 +57,7 @@
 
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <p>Si vous n'avez pas de compte propriétaire, veuillez vous <a class="text-dark" href="registrationTenant.php">inscrire ici</a>.</p>
+                        <p>Si vous n'avez pas de compte propriétaire, veuillez vous <a class="text-dark" href="registrationLandlord.php">inscrire ici</a>.</p>
 
                     </div>
                 </div>
