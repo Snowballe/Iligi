@@ -11,8 +11,7 @@ if(isset($_POST["submit"])){
     $nameTenant=str_replace(['UNION','WHERE','+','>','<','?','*','/','(',')','\"','%','--',';'],'',$_POST["name_tenant"]);
     $emailTenant=str_replace(['UNION','WHERE','+','>','<','?','*','/','(',')','\"','%','--',';'],'',$_POST["email_tenant"]);
     $passwordTenant=str_replace(['UNION','WHERE','+','>','<','?','*','/','(',')','\"','%','--',';'],'',$_POST["password_tenant"]);
-    
-        
+
     $user=addTenant($surnameTenant, $nameTenant, $emailTenant, $passwordTenant, $_POST["tel_tenant"],$_POST["nb_roommates_tenant"]);
 
         if($user) {

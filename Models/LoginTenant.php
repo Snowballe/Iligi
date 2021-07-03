@@ -39,9 +39,6 @@ function checkUser($email_tenant, $password_tenant) {
     } else {
         header('location: loginTenant.php?wrongEmail');
     };
-
-
-
 };
 
 ?>

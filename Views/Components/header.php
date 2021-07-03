@@ -14,7 +14,7 @@ require 'Functions/database.fn.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iligi</title>
-  <link rel="icon" type="image/x-icon" href="https://static-cdn.website-editor.net/runtime/favicon_d1_res.ico">
+  <link rel="icon" type="image/x-icon" href="Assets\img\ILIGIICON.ico">
   <link rel="stylesheet" href="Assets/CSS/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="Assets/CSS/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@ require 'Functions/database.fn.php';
         <nav class="col navbar navbar-expand-lg navbar-light">
 
           <a class="navbar-brand" href="index.php">
-            <img src="Assets/img/iligilogotrans.png" alt="Logo Iligi" width="100" height="60">
+            <img src="Assets\img\ILIGI-COULEURS-RVB-1920w.png" alt="Logo Iligi" width="190" height="90">
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
